@@ -11,6 +11,25 @@ export default function PromptOutputV2({ variants }: PromptOutputV2Props) {
   const [activeTab, setActiveTab] = useState(0);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
+  const resourceLinks = [
+    {
+      label: 'Card Artwork',
+      href: 'https://drive.google.com/drive/folders/1q2a1s08cmnNVicgk0eQcAMXfjLnKoscI?usp=sharing',
+    },
+    {
+      label: 'Shadows',
+      href: 'https://drive.google.com/drive/folders/1FctesmOLENkQcQoTdjpDtEZToqt29D5Q?usp=drive_link',
+    },
+    {
+      label: 'Agave',
+      href: 'https://drive.google.com/drive/folders/1HgHvBWj1eFnb_leNDIpClQgTRclzZR1k?usp=drive_link',
+    },
+    {
+      label: 'Pack Shots',
+      href: 'https://drive.google.com/drive/folders/1rMihS9Wyc7NgbXFLEim3_Hp_uvLijT4E?usp=drive_link',
+    },
+  ];
+
   const handleCopy = async (prompt: string, index: number) => {
     try {
       await navigator.clipboard.writeText(prompt);
@@ -116,6 +135,24 @@ export default function PromptOutputV2({ variants }: PromptOutputV2Props) {
           <strong>Next steps:</strong> Copy your chosen variant and paste into Gemini to generate your image/video.
           Try the Primary variant first, or use Safe for highest reliability.
         </p>
+      </div>
+
+      {/* Reference asset quick-links */}
+      <div className="space-y-3">
+        <div className="text-sm text-white opacity-80">Open reference folders (new tab):</div>
+        <div className="flex flex-wrap gap-3">
+          {resourceLinks.map(link => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded border border-muted-olive text-white hover:bg-muted-olive transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );
