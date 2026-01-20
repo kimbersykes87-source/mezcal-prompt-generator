@@ -1,0 +1,6 @@
+# Cloudflare Pages Configuration
+name = "prompt-mezcalomano"
+compatibility_date = "2026-01-20"
+production_branch = "main"
+
+[env.production]
