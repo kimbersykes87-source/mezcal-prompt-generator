@@ -1,5 +1,7 @@
 # Mezcal Prompt Generator
 
+**🌐 Live Site**: [https://prompt-mezcalomano.pages.dev/](https://prompt-mezcalomano.pages.dev/)
+
 A web application for generating Gemini-ready image prompts for mezcal photography. This tool guides you through a 2-round selection process to create detailed, creative prompts that combine Photography Principles (Agaveculture, Atmosphere, Action) with Content Pillars (Discover, Level Up, Play).
 
 ## Features
@@ -52,6 +54,8 @@ The static export will be generated in the `out/` directory.
 
 ## Deployment to Cloudflare Pages
 
+**✅ Live Deployment**: The site is currently deployed and available at [https://prompt-mezcalomano.pages.dev/](https://prompt-mezcalomano.pages.dev/)
+
 ### Via Git Integration (Recommended)
 
 1. **Connect Repository**:
@@ -69,7 +73,7 @@ The static export will be generated in the `out/` directory.
    - Preview deploys are created for pull requests
 
 4. **Custom Domain**:
-   - The site will be available at `prompt-mezcalomano.pages.dev` (auto-created)
+   - The site is available at [https://prompt-mezcalomano.pages.dev/](https://prompt-mezcalomano.pages.dev/)
    - You can add a custom domain in the Pages dashboard
 
 ### Manual Deployment
