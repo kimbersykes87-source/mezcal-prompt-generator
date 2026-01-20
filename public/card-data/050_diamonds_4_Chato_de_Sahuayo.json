@@ -1,0 +1,28 @@
+{
+  "id": "050",
+  "original_filename": "050_diamonds_4.jpg",
+  "new_filename": "050_diamonds_4_Chato_de_Sahuayo.json",
+  "type": "numbered_card_species",
+  "suit": "diamonds",
+  "rank": "4",
+  "colourway": "red",
+  "text": {
+    "species_name": "Chato de Sahuayo",
+    "tagline": "\"The Snub-Nosed Sage\"",
+    "tasting_notes": [
+      "plump sweet earth"
+    ],
+    "latin_name": "Agave americana ssp. sahuayensis",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "011",
+  "original_filename": "011_spades_4.jpg",
+  "new_filename": "011_spades_4_Sierra-Negra.json",
+  "type": "face_card_species",
+  "suit": "spades",
+  "rank": "4",
+  "colourway": null,
+  "text": {
+    "species_name": "Sierra Negra",
+    "tagline": "The Thorny Titan",
+    "tasting_notes": [
+      "dark fruity depth"
+    ],
+    "latin_name": "Agave americana (Sierra Negra form)",
+    "habitat": "Thrives in mountains & canyons",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

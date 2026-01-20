@@ -1,0 +1,26 @@
+{
+  "id": "048",
+  "original_filename": "048_diamonds_6.jpg",
+  "new_filename": "048_diamonds_6_Lechuguilla_Ceniza.json",
+  "type": "numbered_card_species",
+  "suit": "diamonds",
+  "rank": "6",
+  "colourway": "red",
+  "text": {
+    "species_name": "Lechuguilla Ceniza",
+    "tagline": "\"The Sly Shin Dagger\"",
+    "tasting_notes": ["ashy green earth"],
+    "latin_name": "Agave shrevei",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 2.5 to 4.5 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

@@ -1,25 +1,55 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import type { Principle, Pillar, Round1Selection, Round2Selection } from '@/types';
+import type { 
+  Principle, 
+  Pillar, 
+  Step0Selection, 
+  SelectedReferences, 
+  CardReference,
+  AnalysisTags,
+  Round2Selection,
+  SceneBlueprint,
+  PromptVariant
+} from '@/types';
 import { loadAllPrinciples, loadAllPillars, loadPrinciple, loadPillar } from '@/lib/configLoader';
-import { buildPrompt } from '@/lib/promptBuilder';
-import ImageUpload from '@/components/ImageUpload';
-import Round1Selector from '@/components/Round1Selector';
+import { buildPromptForBlueprint, generateVariants } from '@/lib/promptBuilderV2';
+import Step0Selector from '@/components/Step0Selector';
+import Round1SelectorV2, { Round1SelectionV2 } from '@/components/Round1SelectorV2';
 import Round2Generator from '@/components/Round2Generator';
-import PromptOutput from '@/components/PromptOutput';
-import SurpriseMeButton from '@/components/SurpriseMeButton';
+import ReferenceLibrarySelector from '@/components/ReferenceLibrarySelector';
+import ReferenceAnalysis from '@/components/ReferenceAnalysis';
+import PromptOutputV2 from '@/components/PromptOutputV2';
+import SurpriseMeButtonV2 from '@/components/SurpriseMeButtonV2';
 
 export default function Home() {
   const [principles, setPrinciples] = useState<Principle[]>([]);
   const [pillars, setPillars] = useState<Pillar[]>([]);
-  const [images, setImages] = useState<File[]>([]);
-  const [round1Selection, setRound1Selection] = useState<Round1Selection | null>(null);
-  const [round2Selection, setRound2Selection] = useState<Round2Selection | null>(null);
-  const [prompt, setPrompt] = useState<string>('');
   const [errors, setErrors] = useState<string[]>([]);
+
+  // Step 0
+  const [step0Selection, setStep0Selection] = useState<Step0Selection | null>(null);
+  
+  // References
+  const [selectedReferences, setSelectedReferences] = useState<SelectedReferences>({
+    faceCardIds: [],
+    backCardId: undefined,
+  });
+  const [loadedReferences, setLoadedReferences] = useState<CardReference[]>([]);
+  const [analysisTags, setAnalysisTags] = useState<AnalysisTags | undefined>(undefined);
+
+  // Round 1
+  const [round1Selection, setRound1Selection] = useState<Round1SelectionV2 | null>(null);
+  
+  // Round 2
+  const [round2Selection, setRound2Selection] = useState<Round2Selection | null>(null);
+
+  // Loaded principle and pillar
   const [selectedPrinciple, setSelectedPrinciple] = useState<Principle | null>(null);
   const [selectedPillar, setSelectedPillar] = useState<Pillar | null>(null);
+
+  // Variants
+  const [variants, setVariants] = useState<PromptVariant[]>([]);
 
   // Load configs on mount
   useEffect(() => {
@@ -39,14 +69,14 @@ export default function Home() {
     loadConfigs();
   }, []);
 
-  // Load selected principle and pillar when round1Selection changes
+  // Load selected principle and pillar when step0 changes
   useEffect(() => {
     async function loadSelected() {
-      if (round1Selection?.principleId && round1Selection?.pillarId) {
+      if (step0Selection?.principleId && step0Selection?.pillarId) {
         try {
           const [principle, pillar] = await Promise.all([
-            loadPrinciple(round1Selection.principleId),
-            loadPillar(round1Selection.pillarId),
+            loadPrinciple(step0Selection.principleId),
+            loadPillar(step0Selection.pillarId),
           ]);
           setSelectedPrinciple(principle);
           setSelectedPillar(pillar);
@@ -59,44 +89,91 @@ export default function Home() {
       }
     }
     loadSelected();
-  }, [round1Selection?.principleId, round1Selection?.pillarId]);
+  }, [step0Selection?.principleId, step0Selection?.pillarId]);
 
-  // Build prompt when selections change
+  // Build variants when all selections are complete
   useEffect(() => {
-    if (selectedPrinciple && selectedPillar && round1Selection && round2Selection) {
-      try {
-        const generatedPrompt = buildPrompt({
-          principle: selectedPrinciple,
-          pillar: selectedPillar,
-          round1: round1Selection,
-          round2: round2Selection,
-          referenceImages: images,
-        });
-        setPrompt(generatedPrompt);
-      } catch (error) {
-        console.error('Error building prompt:', error);
-        setErrors(['Failed to build prompt. Please check your selections.']);
-      }
-    } else {
-      setPrompt('');
-    }
-  }, [selectedPrinciple, selectedPillar, round1Selection, round2Selection, images]);
+    async function buildVariants() {
+      if (
+        step0Selection && 
+        selectedPrinciple && 
+        selectedPillar && 
+        round1Selection && 
+        round2Selection &&
+        loadedReferences.length > 0
+      ) {
+        try {
+          const blueprint: SceneBlueprint = {
+            step0: step0Selection,
+            round1: round1Selection,
+            round2: round2Selection,
+            selectedReferences,
+            analysisTags,
+          };
 
-  const handleRound1Change = useCallback((selection: Round1Selection) => {
+          const generatedVariants = await generateVariants({
+            blueprint,
+            principle: selectedPrinciple,
+            pillar: selectedPillar,
+            references: loadedReferences,
+          });
+
+          setVariants(generatedVariants);
+        } catch (error) {
+          console.error('Error building variants:', error);
+          setErrors(['Failed to build prompts. Please check your selections.']);
+        }
+      } else {
+        setVariants([]);
+      }
+    }
+    buildVariants();
+  }, [
+    step0Selection, 
+    selectedPrinciple, 
+    selectedPillar, 
+    round1Selection, 
+    round2Selection, 
+    selectedReferences,
+    loadedReferences,
+    analysisTags
+  ]);
+
+  const handleStep0Change = useCallback((selection: Step0Selection) => {
+    setStep0Selection(selection);
+    // Reset downstream selections when step0 changes
+    setRound1Selection(null);
+    setRound2Selection(null);
+  }, []);
+
+  const handleRound1Change = useCallback((selection: Round1SelectionV2) => {
     setRound1Selection(selection);
+    // Reset round2 when round1 changes
+    setRound2Selection(null);
   }, []);
 
   const handleRound2Change = useCallback((selection: Round2Selection) => {
     setRound2Selection(selection);
   }, []);
 
-  const handleImagesChange = useCallback((files: File[]) => {
-    setImages(files);
+  const handleReferencesChange = useCallback((selection: SelectedReferences) => {
+    setSelectedReferences(selection);
   }, []);
 
-  const handleSurprise = useCallback((selection: Round1Selection) => {
+  const handleReferencesLoad = useCallback((refs: CardReference[]) => {
+    setLoadedReferences(refs);
+  }, []);
+
+  const handleAnalysisComplete = useCallback((tags: AnalysisTags) => {
+    setAnalysisTags(tags);
+  }, []);
+
+  const handleSurpriseStep0 = useCallback((selection: Step0Selection) => {
+    setStep0Selection(selection);
+  }, []);
+
+  const handleSurpriseRound1 = useCallback((selection: Round1SelectionV2) => {
     setRound1Selection(selection);
-    // Round 2 will auto-generate when principle/pillar changes
   }, []);
 
   return (
@@ -124,25 +201,54 @@ export default function Home() {
         <div className="space-y-8">
           {/* Surprise Me Button */}
           <div className="flex justify-center">
-            <SurpriseMeButton
+            <SurpriseMeButtonV2
               principles={principles}
               pillars={pillars}
-              onSurprise={handleSurprise}
+              onSurpriseStep0={handleSurpriseStep0}
+              onSurpriseRound1={handleSurpriseRound1}
             />
           </div>
 
-          {/* Image Upload */}
+          {/* Step 0: Prompt Setup */}
+          <section className="bg-dark-grey border border-yellow-agave p-6 rounded-lg">
+            <Step0Selector onSelectionChange={handleStep0Change} />
+          </section>
+
+          {/* Reference Library */}
           <section className="bg-dark-grey border border-muted-olive p-6 rounded-lg">
             <h2 className="text-2xl mb-4 text-white">REFERENCE IMAGES</h2>
-            <ImageUpload
-              onImagesChange={handleImagesChange}
-              onError={setErrors}
-            />
+            {step0Selection && (
+              <>
+                <ReferenceLibrarySelector
+                  outputType={step0Selection.outputType}
+                  onSelectionChange={handleReferencesChange}
+                  onReferencesLoad={handleReferencesLoad}
+                />
+                
+                {loadedReferences.length > 0 && (
+                  <div className="mt-6 pt-6 border-t border-muted-olive">
+                    <ReferenceAnalysis
+                      selectedReferences={loadedReferences}
+                      onAnalysisComplete={handleAnalysisComplete}
+                    />
+                  </div>
+                )}
+              </>
+            )}
+            {!step0Selection && (
+              <div className="p-4 border border-muted-olive rounded text-white opacity-70">
+                Complete Step 0 first
+              </div>
+            )}
           </section>
 
           {/* Round 1 Selector */}
           <section className="bg-dark-grey border border-muted-olive p-6 rounded-lg">
-            <Round1Selector onSelectionChange={handleRound1Change} />
+            <Round1SelectorV2 
+              principle={selectedPrinciple}
+              pillar={selectedPillar}
+              onSelectionChange={handleRound1Change} 
+            />
           </section>
 
           {/* Round 2 Generator */}
@@ -154,11 +260,17 @@ export default function Home() {
             />
           </section>
 
-          {/* Prompt Output */}
-          <section className="bg-dark-grey border border-muted-olive p-6 rounded-lg">
-            <PromptOutput prompt={prompt} />
+          {/* Prompt Output with Variants */}
+          <section className="bg-dark-grey border border-yellow-agave p-6 rounded-lg">
+            <PromptOutputV2 variants={variants} />
           </section>
         </div>
+
+        {/* Footer Info */}
+        <footer className="mt-12 text-center text-white opacity-60 text-sm">
+          <p>Mezcal Prompt Generator v2.0 - Optimized for Gemini AI</p>
+          <p className="mt-2">No square formats. High hit-rate prompts. Still + Video support.</p>
+        </footer>
       </div>
     </div>
   );

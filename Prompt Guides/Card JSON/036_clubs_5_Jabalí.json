@@ -1,0 +1,28 @@
+{
+  "id": "036",
+  "original_filename": "036_clubs_5.jpg",
+  "new_filename": "036_clubs_5_Jabalí.json",
+  "type": "face_card_species",
+  "suit": "clubs",
+  "rank": "5",
+  "colourway": "black",
+  "text": {
+    "species_name": "Jabalí",
+    "tagline": "The Wild Boar",
+    "tasting_notes": [
+      "feral floral blaze"
+    ],
+    "latin_name": "Agave convallis",
+    "habitat": "Thrives in mountains & canyons",
+    "size": "Typically 2.5 to 4.5 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

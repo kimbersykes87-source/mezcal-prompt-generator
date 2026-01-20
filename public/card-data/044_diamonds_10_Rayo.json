@@ -1,0 +1,26 @@
+{
+  "id": "044",
+  "original_filename": "044_diamonds_10.jpg",
+  "new_filename": "044_diamonds_10_Rayo.json",
+  "type": "numbered_card_species",
+  "suit": "diamonds",
+  "rank": "10",
+  "colourway": "red",
+  "text": {
+    "species_name": "Rayo",
+    "tagline": "\"The Lightning Renegade\"",
+    "tasting_notes": ["electric citrus bolt"],
+    "latin_name": "Agave americana var.",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

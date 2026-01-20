@@ -1,0 +1,30 @@
+{
+  "id": "007_spades_8",
+  "original_filename": "007_spades_8.jpg",
+  "new_filename": "007_spades_8_Papalote.jpg",
+  "type": "face_card_species",
+  "suit": "spades",
+  "rank": "8",
+  "colourway": null,
+  "text": {
+    "species_name": "Papalote",
+    "tagline": "The Playful Butterfly",
+    "tasting_notes": [
+      "grassy",
+      "citrus",
+      "blaze"
+    ],
+    "latin_name": "Agave cupreata",
+    "habitat": "Thrives in forests & semi-tropical zones",
+    "size": "Typically 2.5 to 4.5 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

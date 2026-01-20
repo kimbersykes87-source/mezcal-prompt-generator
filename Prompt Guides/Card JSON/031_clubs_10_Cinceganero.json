@@ -1,0 +1,28 @@
+{
+  "id": "031",
+  "original_filename": "031_clubs_10.jpg",
+  "new_filename": "031_clubs_10_Cinceganero.json",
+  "type": "face_card_species",
+  "suit": "clubs",
+  "rank": "10",
+  "colourway": "black",
+  "text": {
+    "species_name": "Cincegañero",
+    "tagline": "The Restless Youth",
+    "tasting_notes": [
+      "toffee oak richness"
+    ],
+    "latin_name": "Agave cantala",
+    "habitat": "Thrives in valleys & villages",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

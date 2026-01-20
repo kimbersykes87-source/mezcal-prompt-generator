@@ -1,0 +1,20 @@
+{
+  "id": "057",
+  "original_filename": "057_card-back.jpg",
+  "new_filename": "057_card-back.json",
+  "type": "card_back",
+  "suit": null,
+  "rank": null,
+  "colourway": "black_white",
+  "text": {
+    "title": "Card Back",
+    "description": "Skull pattern ornamental card back design"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

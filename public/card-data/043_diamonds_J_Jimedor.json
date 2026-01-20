@@ -1,0 +1,26 @@
+{
+  "id": "043",
+  "original_filename": "043_diamonds_J.jpg",
+  "new_filename": "043_diamonds_J_Jimedor.json",
+  "type": "face_card_species",
+  "suit": "diamonds",
+  "rank": "J",
+  "colourway": "red",
+  "text": {
+    "species_name": null,
+    "tagline": null,
+    "tasting_notes": [],
+    "latin_name": null,
+    "habitat": null,
+    "size": null,
+    "job_title": "Jimedor",
+    "action_line": "Hacking the leaves"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

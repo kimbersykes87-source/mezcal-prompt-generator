@@ -1,0 +1,21 @@
+{
+  "id": "053",
+  "original_filename": "053_joker_black.jpg",
+  "new_filename": "053_joker_black.json",
+  "type": "joker",
+  "suit": null,
+  "rank": "JOKER",
+  "colourway": "black",
+  "text": {
+    "title": "JOKER",
+    "variant": "black",
+    "description": "Bat illustration joker card"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

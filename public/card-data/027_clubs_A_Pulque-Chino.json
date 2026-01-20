@@ -1,0 +1,28 @@
+{
+  "id": "027",
+  "original_filename": "027_clubs_A.jpg",
+  "new_filename": "027_clubs_A_Pulque-Chino.json",
+  "type": "face_card_species",
+  "suit": "clubs",
+  "rank": "A",
+  "colourway": "black",
+  "text": {
+    "species_name": "Pulque Chino",
+    "tagline": "The Rounded Rascal",
+    "tasting_notes": [
+      "savage sweet rush"
+    ],
+    "latin_name": "Agave americana var.",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 6 to 10 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

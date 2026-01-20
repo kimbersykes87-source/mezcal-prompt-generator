@@ -1,0 +1,30 @@
+{
+  "id": "006_spades_9",
+  "original_filename": "006_spades_9.jpg",
+  "new_filename": "006_spades_9_Alto.jpg",
+  "type": "face_card_species",
+  "suit": "spades",
+  "rank": "9",
+  "colourway": null,
+  "text": {
+    "species_name": "Alto",
+    "tagline": "The Soaring Monarch",
+    "tasting_notes": [
+      "rugged",
+      "herbal",
+      "depth"
+    ],
+    "latin_name": "Agave inaequidens",
+    "habitat": "Thrives in mountains & canyons",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

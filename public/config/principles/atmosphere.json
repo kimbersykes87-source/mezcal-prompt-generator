@@ -1,7 +1,7 @@
 {
   "id": "atmosphere",
   "name": "Atmosphere",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "purpose": "Warm, intimate, lived-in documentary scenes where the product sits naturally in real social flow. Tight crops, subtle clutter, low light glow. Never staged or polished.",
   "priority": 1,
   "mood_keywords": [
@@ -14,6 +14,61 @@
     "textured",
     "human"
   ],
+
+  "step0_required": {
+    "requires_principle": true,
+    "allowed_platform_formats": ["9x16", "4x5"],
+    "allowed_output_types": ["still", "video_first_frame"]
+  },
+
+  "platform_behavior": {
+    "9x16": {
+      "framing_bias": "tight vertical table intimacy, hands and cards centred, background glow compressed",
+      "safe_zone_notes": "Keep cards and glass inside the central 55 percent width and central 60 percent height. Avoid placing hero details in top 15 percent and bottom 18 percent.",
+      "subject_scale": "Cards and glass occupy 40 to 70 percent of frame height."
+    },
+    "4x5": {
+      "framing_bias": "slightly wider tabletop scene with more context clutter, still close and intimate",
+      "safe_zone_notes": "Keep cards and glass inside the central 65 percent width and central 65 percent height.",
+      "subject_scale": "Cards and glass occupy 30 to 60 percent of frame height."
+    }
+  },
+
+  "intensity_bands": [
+    {
+      "range": [0, 20],
+      "label": "quiet glow",
+      "atmosphere_behaviour": "slow, intimate, almost still, hands relaxed, minimal action",
+      "allowed_motion": ["gentle card tap", "slow card fan", "soft glass lift"],
+      "motion_blur_amount": "none",
+      "prop_density": "low"
+    },
+    {
+      "range": [21, 50],
+      "label": "casual flow",
+      "atmosphere_behaviour": "conversation energy, cards passed naturally, glass nudged, lived-in clutter",
+      "allowed_motion": ["deck pass", "card slide", "gentle clink"],
+      "motion_blur_amount": "low",
+      "prop_density": "medium_low"
+    },
+    {
+      "range": [51, 80],
+      "label": "social buzz",
+      "atmosphere_behaviour": "more laughter and movement, still readable and intimate, one sharp anchor remains",
+      "allowed_motion": ["card fan mid-debate", "quick pass", "hands reaching for citrus or salt"],
+      "motion_blur_amount": "low_to_medium",
+      "prop_density": "medium"
+    },
+    {
+      "range": [81, 100],
+      "label": "busy table energy",
+      "atmosphere_behaviour": "maximum crowd flow without chaos, movement at edges only, product stays centred and readable",
+      "allowed_motion": ["multiple hands entering frame edges", "fast card pass", "glass lift and set-down"],
+      "motion_blur_amount": "medium_low",
+      "prop_density": "medium_high"
+    }
+  ],
+
   "core_rules": {
     "hero_focus": [
       "Frame the product dead-centre inside casual flow: cards fanned mid-debate, decks mid-pass over tasting glasses.",
@@ -54,6 +109,53 @@
       ]
     }
   },
+
+  "reference_rules": {
+    "reference_source": "on_site_library_only",
+    "still_max_refs": 4,
+    "video_first_frame_max_refs": 3,
+    "preferred_ref_sets": [
+      { "label": "atmosphere default", "face_cards": 2, "back_cards": 1 },
+      { "label": "quiet minimal", "face_cards": 1, "back_cards": 1 }
+    ],
+    "do_not_allow": ["uploads", "external_urls"]
+  },
+
+  "video_first_frame_rules": {
+    "first_frame_must_read_like_still": true,
+    "no_motion_blur_in_frame_1": true,
+    "first_frame_clarity_rules": [
+      "Frame 1 must be crisp and readable: the card artwork and glass rim must be tack sharp.",
+      "Freeze the product moment. Motion only begins after frame 1.",
+      "Faces must remain partial, cropped, turned away, or blurred beyond recognition."
+    ],
+    "motion_after_frame_1_plan": {
+      "allowed_motion": [
+        "hands continue passing the deck",
+        "a card slides into frame and settles",
+        "a glass nudges leaving a condensation ring",
+        "subtle laughter movement in background blur",
+        "lamp bokeh flicker with micro camera drift"
+      ],
+      "avoid_motion": [
+        "new objects appearing",
+        "new hands appearing out of nowhere",
+        "faces turning into portrait framing",
+        "labels changing",
+        "text becoming readable"
+      ]
+    },
+    "continuity_locks": [
+      "same card IDs and orientation",
+      "same number of hands in the scene",
+      "same lighting colour and direction",
+      "same clutter layout and prop count",
+      "no new labels or readable text appears",
+      "mezcal remains still and never bubbly",
+      "copita type remains consistent"
+    ]
+  },
+
   "locations": {
     "preferred": [
       {
@@ -96,6 +198,7 @@
       "textured plaster"
     ]
   },
+
   "casting": {
     "age_range": "25-40",
     "vibe": [
@@ -141,6 +244,7 @@
       "clean influencer-style staging"
     ]
   },
+
   "camera": {
     "preferred_angles": [
       {
@@ -194,6 +298,7 @@
       "product centred but never billboard-sized"
     ]
   },
+
   "lighting": {
     "preferred": [
       {
@@ -232,6 +337,7 @@
       "texture visible on wood and clay"
     ]
   },
+
   "product_handling": {
     "scale_locks": [
       "Playing cards must be true-to-size 2.5 inches by 3.5 inches.",
@@ -250,13 +356,60 @@
       "too-clean table with no life"
     ]
   },
+
   "prompt_fragments": {
     "style_line": "photorealistic, documentary realism, warm intimate atmosphere, tactile textures, natural grain, shallow depth of field, soft lamp bokeh",
     "atmosphere_line": "product centered in casual flow, cards fanned mid-debate, deck mid-pass over tasting glass, tight crop for intimacy",
     "environment_line": "scarred wood table, slight clutter like coasters and matchbooks, low-lit bar or cantina glow, no pristine staging",
     "wardrobe_line": "tattoos, rolled-up sleeves, simple vests, rings, bracelets, worn denim, casual bar crew vibe",
-    "face_rule_line": "no full faces: hands dominant, partial faces only if cropped or blurred"
+    "face_rule_line": "no full faces: hands dominant, partial faces only if cropped or blurred",
+    "realness_micro_specs": [
+      "fingerprints on glass and glossy varnish",
+      "condensation ring under copita",
+      "micro scratches on worn wood",
+      "physically accurate refraction in glass",
+      "contact shadows under card corners",
+      "soft lamp bokeh and warm highlight rolloff",
+      "slight natural grain and low-light noise"
+    ],
+    "negatives": [
+      "no extra fingers",
+      "no warped hands",
+      "no deformed anatomy",
+      "no melted borders",
+      "no stretched card proportions",
+      "no bubbles or foam in mezcal",
+      "no watermark",
+      "no UI icons",
+      "no readable labels",
+      "no whisky tumbler or rocks glass"
+    ]
   },
+
+  "variants": {
+    "safe_commercial": {
+      "intensity_delta": -15,
+      "motion_blur_bias": "none_to_low",
+      "prop_count_range": [1, 4],
+      "camera_bias": ["angle_45", "over_shoulder"],
+      "notes": "Highest hit-rate. Warm glow, crisp product, casual hands, minimal clutter."
+    },
+    "risky_chaotic": {
+      "intensity_delta": 25,
+      "motion_blur_bias": "low_to_medium",
+      "prop_count_range": [3, 7],
+      "camera_bias": ["handheld_close", "macro_crop"],
+      "notes": "More hands, more table energy, still intimate. Product remains centred and readable."
+    },
+    "ultra_minimal_hero": {
+      "intensity_forced": 10,
+      "motion_blur_bias": "none",
+      "prop_count_range": [0, 2],
+      "camera_bias": ["macro_crop", "angle_45"],
+      "notes": "Quiet lamp glow. One glass, one card moment. No busy crowd cues."
+    }
+  },
+
   "round2_generators": {
     "scene_moment_templates": [
       "Hands fan the cards mid-debate, glass nudged closer",
@@ -282,6 +435,7 @@
       "If a notepad appears, it must be blank or blurred beyond readability."
     ]
   },
+
   "pillar_compatibility_hints": {
     "discover": {
       "nudge": "Curiosity and education through subtle objects and agave cues, no readable notes.",
@@ -296,6 +450,7 @@
       "safe_props_additions": ["tasting flight tray", "clay copita", "citrus peel"]
     }
   },
+
   "hard_constraints_locked": [
     "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
     "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
@@ -307,6 +462,7 @@
     "mezcal glass must be a small clay copita or small tulip copita, not a tumbler or rocks glass",
     "atmosphere rule: no full faces ever, only hands or partial/blurred/turned away faces"
   ],
+
   "anti_patterns": {
     "avoid_phrases": [
       "portrait photography",
@@ -324,6 +480,7 @@
       "watermark or UI icon"
     ]
   },
+
   "scoring_heuristics": {
     "good_output_signals": [
       "tight crop with hands and product in frame",

@@ -1,0 +1,28 @@
+{
+  "id": "035",
+  "original_filename": "035_clubs_6.jpg",
+  "new_filename": "035_clubs_6_Lamparillo.json",
+  "type": "face_card_species",
+  "suit": "clubs",
+  "rank": "6",
+  "colourway": "black",
+  "text": {
+    "species_name": "Lamparillo",
+    "tagline": "The Windswept Nightlight",
+    "tasting_notes": [
+      "fiery nectar flicker"
+    ],
+    "latin_name": "Agave asperrima",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

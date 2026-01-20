@@ -1,0 +1,26 @@
+{
+  "id": "029",
+  "original_filename": "029_clubs_Q.jpg",
+  "new_filename": "029_clubs_Q_Maestra.json",
+  "type": "face_card_role",
+  "suit": "clubs",
+  "rank": "Q",
+  "colourway": "black",
+  "text": {
+    "species_name": null,
+    "tagline": null,
+    "tasting_notes": [],
+    "latin_name": null,
+    "habitat": null,
+    "size": null,
+    "job_title": "Maestra",
+    "action_line": "Straining the liquid"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "041",
+  "original_filename": "041_diamonds_K.jpg",
+  "new_filename": "041_diamonds_K_Maestro.json",
+  "type": "face_card_species",
+  "suit": "diamonds",
+  "rank": "K",
+  "colourway": "red",
+  "text": {
+    "species_name": null,
+    "tagline": null,
+    "tasting_notes": [],
+    "latin_name": null,
+    "habitat": null,
+    "size": null,
+    "job_title": "Maestro",
+    "action_line": "Stirring the mash"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

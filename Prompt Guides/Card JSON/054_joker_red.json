@@ -1,0 +1,21 @@
+{
+  "id": "054",
+  "original_filename": "054_joker_red.jpg",
+  "new_filename": "054_joker_red.json",
+  "type": "joker",
+  "suit": null,
+  "rank": "JOKER",
+  "colourway": "red",
+  "text": {
+    "title": "JOKER",
+    "variant": "red",
+    "description": "Bat illustration joker card"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "051",
+  "original_filename": "051_diamonds_3.jpg",
+  "new_filename": "051_diamonds_3_Cenizo_Durangensis.json",
+  "type": "numbered_card_species",
+  "suit": "diamonds",
+  "rank": "3",
+  "colourway": "red",
+  "text": {
+    "species_name": "Cenizo Durangensis",
+    "tagline": "\"The Silvery Ghost\"",
+    "tasting_notes": [
+      "ashy mineral smoke"
+    ],
+    "latin_name": "Agave durangensis",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

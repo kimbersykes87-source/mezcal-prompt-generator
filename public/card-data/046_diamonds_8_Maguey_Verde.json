@@ -1,0 +1,26 @@
+{
+  "id": "046",
+  "original_filename": "046_diamonds_8.jpg",
+  "new_filename": "046_diamonds_8_Maguey_Verde.json",
+  "type": "numbered_card_species",
+  "suit": "diamonds",
+  "rank": "8",
+  "colourway": "red",
+  "text": {
+    "species_name": "Maguey Verde",
+    "tagline": "\"The Lush Green Beacon\"",
+    "tasting_notes": ["vivid green nectar"],
+    "latin_name": "Agave gentryi",
+    "habitat": "Thrives in mountains & canyons",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "040",
+  "original_filename": "040_diamonds_A.jpg",
+  "new_filename": "040_diamonds_A_Chuparrosa.json",
+  "type": "face_card_species",
+  "suit": "diamonds",
+  "rank": "A",
+  "colourway": "red",
+  "text": {
+    "species_name": "Chuparrosa",
+    "tagline": "The Nectar-Thief",
+    "tasting_notes": [
+      "rose nectar bloom"
+    ],
+    "latin_name": "A. sp., angustifolia-americana hybrid",
+    "habitat": "Thrives in forests & semi-tropical zones",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

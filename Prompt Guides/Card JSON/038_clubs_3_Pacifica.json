@@ -1,0 +1,28 @@
+{
+  "id": "038",
+  "original_filename": "038_clubs_3.jpg",
+  "new_filename": "038_clubs_3_Pacifica.json",
+  "type": "face_card_species",
+  "suit": "clubs",
+  "rank": "3",
+  "colourway": "black",
+  "text": {
+    "species_name": "Pacifica",
+    "tagline": "The Seaside Spire",
+    "tasting_notes": [
+      "saline mineral silk"
+    ],
+    "latin_name": "Agave pacifica",
+    "habitat": "Thrives in forests & semi-tropical zones",
+    "size": "Typically 2.5 to 4.5 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

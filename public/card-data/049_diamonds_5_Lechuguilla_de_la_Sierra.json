@@ -1,0 +1,26 @@
+{
+  "id": "049",
+  "original_filename": "049_diamonds_5.jpg",
+  "new_filename": "049_diamonds_5_Lechuguilla_de_la_Sierra.json",
+  "type": "numbered_card_species",
+  "suit": "diamonds",
+  "rank": "5",
+  "colourway": "red",
+  "text": {
+    "species_name": "Lechuguilla de la Sierra",
+    "tagline": "\"The Daggered Daredevil\"",
+    "tasting_notes": ["funky citrus silk"],
+    "latin_name": "Agave maximiliana",
+    "habitat": "Thrives in forests & semi-tropical zones",
+    "size": "Typically 2.5 to 4.5 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

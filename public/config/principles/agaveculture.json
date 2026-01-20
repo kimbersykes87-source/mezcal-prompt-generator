@@ -1,8 +1,8 @@
 {
   "id": "agaveculture",
   "name": "Agaveculture",
-  "version": "1.0.0",
-  "purpose": "Earthy, intimate agave-first photography. Crop tight on agave textures and forms. Mostly plant-only with rare human context. Diffused natural light, gritty realism, no staged gardens.",
+  "version": "1.1.0",
+  "purpose": "Earthy, intimate agave-first photography. Tight crops on agave textures and forms. Mostly plant-only with rare human context. Diffused natural light, gritty realism, no staged gardens.",
   "priority": 3,
   "mood_keywords": [
     "earthy",
@@ -14,6 +14,61 @@
     "documentary",
     "raw"
   ],
+
+  "step0_required": {
+    "requires_principle": true,
+    "allowed_platform_formats": ["9x16", "4x5"],
+    "allowed_output_types": ["still", "video_first_frame"]
+  },
+
+  "platform_behavior": {
+    "9x16": {
+      "framing_bias": "vertical spears or stacked leaf edges, dense texture filling the frame",
+      "safe_zone_notes": "Keep the rosette core or main leaf texture inside central 60 percent width and central 65 percent height. Avoid placing key detail in top 15 percent and bottom 18 percent.",
+      "subject_scale": "Agave texture should fill 70 to 95 percent of frame area."
+    },
+    "4x5": {
+      "framing_bias": "slightly wider crop but still tight, allow habitat hints like red soil or rock texture",
+      "safe_zone_notes": "Keep the agave core or primary texture inside central 70 percent width and central 70 percent height.",
+      "subject_scale": "Agave texture should fill 60 to 90 percent of frame area."
+    }
+  },
+
+  "intensity_bands": [
+    {
+      "range": [0, 20],
+      "label": "museum-quiet texture",
+      "agaveculture_behaviour": "still, calm, pure plant detail, near-abstract texture",
+      "allowed_motion": ["none"],
+      "motion_blur_amount": "none",
+      "prop_density": "very_low"
+    },
+    {
+      "range": [21, 50],
+      "label": "field realism",
+      "agaveculture_behaviour": "tiny habitat context, dust and grit, soft wind implied",
+      "allowed_motion": ["subtle breeze", "dust lift (very light)"],
+      "motion_blur_amount": "none",
+      "prop_density": "low"
+    },
+    {
+      "range": [51, 80],
+      "label": "lived-in labour hint",
+      "agaveculture_behaviour": "still plant-first, rare human edge context or piña texture corner",
+      "allowed_motion": ["hand enters edge briefly", "fibres shift slightly"],
+      "motion_blur_amount": "low",
+      "prop_density": "low"
+    },
+    {
+      "range": [81, 100],
+      "label": "kinetic nature",
+      "agaveculture_behaviour": "agave remains the subject, motion comes from wind and dust only",
+      "allowed_motion": ["wind ripple across leaves", "dust shimmer", "fibre flutter"],
+      "motion_blur_amount": "low",
+      "prop_density": "medium_low"
+    }
+  ],
+
   "core_rules": {
     "hero_focus": [
       "Crop tight on agave textures and forms: slender spears, dense rosettes, rough leaf edges fraying against light.",
@@ -56,6 +111,50 @@
       ]
     }
   },
+
+  "reference_rules": {
+    "reference_source": "on_site_library_only",
+    "still_max_refs": 4,
+    "video_first_frame_max_refs": 3,
+    "preferred_ref_sets": [
+      { "label": "quiet default", "face_cards": 1, "back_cards": 1 },
+      { "label": "species comparison", "face_cards": 2, "back_cards": 1 }
+    ],
+    "do_not_allow": ["uploads", "external_urls"]
+  },
+
+  "video_first_frame_rules": {
+    "first_frame_must_read_like_still": true,
+    "no_motion_blur_in_frame_1": true,
+    "first_frame_clarity_rules": [
+      "Frame 1 must be perfectly crisp and texture-rich.",
+      "No camera shake in frame 1.",
+      "If hands appear, they must be peripheral and not the subject."
+    ],
+    "motion_after_frame_1_plan": {
+      "allowed_motion": [
+        "soft wind shifts leaf tips slightly",
+        "dust lifts subtly across leaf surface",
+        "fibres flutter gently",
+        "slow camera micro push-in on texture (very subtle)"
+      ],
+      "avoid_motion": [
+        "new objects appearing",
+        "new hands appearing",
+        "faces entering",
+        "product suddenly becoming hero"
+      ]
+    },
+    "continuity_locks": [
+      "same agave species form and leaf geometry",
+      "same lighting direction and temperature",
+      "same soil and terrain texture",
+      "no new objects introduced",
+      "no staged garden elements appear",
+      "if a card appears, it remains subtle and true scale"
+    ]
+  },
+
   "locations": {
     "preferred": [
       {
@@ -85,14 +184,9 @@
       "indoor studio plant setups",
       "tourist-perfect agave fields with clean staged props"
     ],
-    "ground_textures": [
-      "red earth",
-      "rock and gravel",
-      "dry dust",
-      "patchy soil",
-      "field debris"
-    ]
+    "ground_textures": ["red earth", "rock and gravel", "dry dust", "patchy soil", "field debris"]
   },
+
   "casting": {
     "human_elements_ratio": {
       "strict": true,
@@ -110,44 +204,16 @@
       "partial figures blending into plants",
       "faces rarely visible and never posed"
     ],
-    "skin_texture_notes": [
-      "realistic skin texture",
-      "dirt and sweat present",
-      "no polished beauty lighting"
-    ],
-    "avoid": [
-      "models",
-      "fashion styling",
-      "posed portraits",
-      "crowds"
-    ]
+    "skin_texture_notes": ["realistic skin texture", "dirt and sweat present", "no polished beauty lighting"],
+    "avoid": ["models", "fashion styling", "posed portraits", "crowds"]
   },
+
   "camera": {
     "preferred_angles": [
-      {
-        "id": "macro_crop",
-        "label": "Macro close-crop",
-        "weight": 0.45,
-        "notes": "Primary look: fibres, edges, leaf texture, rosette core."
-      },
-      {
-        "id": "handheld_close",
-        "label": "Handheld close POV",
-        "weight": 0.25,
-        "notes": "Documentary feel. Slight imperfection allowed."
-      },
-      {
-        "id": "angle_45",
-        "label": "45-degree close angle",
-        "weight": 0.2,
-        "notes": "Great for spears stretching upward with depth."
-      },
-      {
-        "id": "top_down",
-        "label": "Top-down rosette crop",
-        "weight": 0.1,
-        "notes": "Only when it’s dense and textural, not graphic-flat."
-      }
+      { "id": "macro_crop", "label": "Macro close-crop", "weight": 0.45, "notes": "Primary look: fibres, edges, leaf texture, rosette core." },
+      { "id": "handheld_close", "label": "Handheld close POV", "weight": 0.25, "notes": "Documentary feel. Slight imperfection allowed." },
+      { "id": "angle_45", "label": "45-degree close angle", "weight": 0.2, "notes": "Great for spears stretching upward with depth." },
+      { "id": "top_down", "label": "Top-down rosette crop", "weight": 0.1, "notes": "Only when it’s dense and textural, not graphic-flat." }
     ],
     "lens_language": [
       "shallow depth of field",
@@ -168,41 +234,17 @@
       "keep the scene quiet and grounded"
     ]
   },
+
   "lighting": {
     "preferred": [
-      {
-        "id": "diffused_natural",
-        "label": "Diffused natural light",
-        "weight": 0.65,
-        "notes": "Soft, even, tactile. Priority lighting mode."
-      },
-      {
-        "id": "overcast_soft",
-        "label": "Overcast soft light",
-        "weight": 0.2,
-        "notes": "Muted shadows, earthy realism."
-      },
-      {
-        "id": "early_late_sun",
-        "label": "Soft edge sunlight (early/late)",
-        "weight": 0.15,
-        "notes": "Only gentle rim light, avoid harsh glare."
-      }
+      { "id": "diffused_natural", "label": "Diffused natural light", "weight": 0.65, "notes": "Soft, even, tactile. Priority lighting mode." },
+      { "id": "overcast_soft", "label": "Overcast soft light", "weight": 0.2, "notes": "Muted shadows, earthy realism." },
+      { "id": "early_late_sun", "label": "Soft edge sunlight (early/late)", "weight": 0.15, "notes": "Only gentle rim light, avoid harsh glare." }
     ],
-    "avoid": [
-      "hard midday sun glare",
-      "studio lighting",
-      "dramatic nightclub colour casts",
-      "harsh flash"
-    ],
-    "palette_notes": [
-      "earthy palettes",
-      "greens to ash tones",
-      "muted blues",
-      "red soil accents",
-      "no artificial neon saturation"
-    ]
+    "avoid": ["hard midday sun glare", "studio lighting", "dramatic nightclub colour casts", "harsh flash"],
+    "palette_notes": ["earthy palettes", "greens to ash tones", "muted blues", "red soil accents", "no artificial neon saturation"]
   },
+
   "product_handling": {
     "integration_rule": {
       "strict": true,
@@ -224,12 +266,57 @@
       "indoor tabletop product scene"
     ]
   },
+
   "prompt_fragments": {
     "style_line": "photorealistic, documentary realism, earthy palette, intimate grit, tactile texture focus, shallow depth of field, diffused natural light",
     "agave_line": "tight crop on agave textures and forms, slender spears, dense rosettes, rough leaf edges fraying against light, fibrous hearts peeling back",
     "ratio_line": "85% plant-only composition, rare contextual human touch at edges only",
-    "environment_line": "raw terrain, field edges or rocky hillsides, uneven ground, no staged gardens"
+    "environment_line": "raw terrain, field edges or rocky hillsides, uneven ground, no staged gardens",
+    "realness_micro_specs": [
+      "waxy bloom and matte grit visible on leaf surfaces",
+      "fine dust and soil particles caught in creases",
+      "micro scratches and weathering on leaf edges",
+      "serrated margins with realistic spacing and sharpness",
+      "fibres with natural fray and uneven thickness",
+      "soft natural bokeh with realistic focus falloff",
+      "true-to-life greens fading into ash and blue-grey"
+    ],
+    "negatives": [
+      "no plastic-looking leaves",
+      "no neon colour grading",
+      "no staged botanical garden styling",
+      "no studio lighting",
+      "no glossy artificial highlights",
+      "no fake symmetrical perfect plants",
+      "no crowds",
+      "no models posing"
+    ]
   },
+
+  "variants": {
+    "safe_commercial": {
+      "intensity_delta": -10,
+      "motion_bias_video": "none",
+      "prop_count_range": [0, 2],
+      "camera_bias": ["macro_crop", "angle_45"],
+      "notes": "Highest hit-rate. Pure texture, diffused light, plant-only."
+    },
+    "risky_chaotic": {
+      "intensity_delta": 20,
+      "motion_bias_video": "subtle wind and dust",
+      "prop_count_range": [1, 4],
+      "camera_bias": ["handheld_close", "macro_crop"],
+      "notes": "Still plant-first. Risk comes from wind, dust, labour edges, never people or clutter."
+    },
+    "ultra_minimal_hero": {
+      "intensity_forced": 5,
+      "motion_bias_video": "none",
+      "prop_count_range": [0, 1],
+      "camera_bias": ["macro_crop"],
+      "notes": "Near-abstract close crop. One texture motif only."
+    }
+  },
+
   "round2_generators": {
     "scene_moment_templates": [
       "A close crop of agave spears catching soft diffused light",
@@ -255,6 +342,7 @@
       "Any human context must be minimal and peripheral."
     ]
   },
+
   "pillar_compatibility_hints": {
     "discover": {
       "nudge": "Use the crop to teach texture differences between agaves without text. Visual curiosity only.",
@@ -269,6 +357,7 @@
       "safe_props_additions": ["callused hands (edge)", "piña fibres (edge)", "weathered tools blurred (rare)"]
     }
   },
+
   "hard_constraints_locked": [
     "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
     "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
@@ -279,6 +368,7 @@
     "playing cards must be true-to-size 2.5 inches by 3.5 inches, fit fully in one adult hand, never oversized",
     "agaveculture rule: 85% plant-only, humans only as minimal peripheral context, no groups"
   ],
+
   "anti_patterns": {
     "avoid_phrases": [
       "studio macro product photography",
@@ -295,6 +385,7 @@
       "clean indoor plant setups"
     ]
   },
+
   "scoring_heuristics": {
     "good_output_signals": [
       "agave texture fills the frame",

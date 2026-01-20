@@ -1,0 +1,28 @@
+{
+  "id": "014",
+  "original_filename": "014_hearts_A.jpg",
+  "new_filename": "014_hearts_A_Castilla.json",
+  "type": "face_card_species",
+  "suit": "hearts",
+  "rank": "A",
+  "colourway": "red",
+  "text": {
+    "species_name": "Castilla",
+    "tagline": "The Thorny Overlord",
+    "tasting_notes": [
+      "golden malt nectar"
+    ],
+    "latin_name": "Agave applanata",
+    "habitat": "Thrives in forests & semi-tropical zones",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

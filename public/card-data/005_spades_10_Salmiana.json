@@ -1,0 +1,30 @@
+{
+  "id": "005_spades_10",
+  "original_filename": "005_spades_10.jpg",
+  "new_filename": "005_spades_10_Salmiana.jpg",
+  "type": "face_card_species",
+  "suit": "spades",
+  "rank": "10",
+  "colourway": null,
+  "text": {
+    "species_name": "Salmiana",
+    "tagline": "The Majestic Giant",
+    "tasting_notes": [
+      "herbaceous",
+      "sweet",
+      "silk"
+    ],
+    "latin_name": "Agave salmiana",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 6 to 10 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

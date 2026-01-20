@@ -1,0 +1,28 @@
+{
+  "id": "037",
+  "original_filename": "037_clubs_4.jpg",
+  "new_filename": "037_clubs_4_Wocomahi.json",
+  "type": "face_card_species",
+  "suit": "clubs",
+  "rank": "4",
+  "colourway": "black",
+  "text": {
+    "species_name": "Wocomahi",
+    "tagline": "The Relentless Gripper",
+    "tasting_notes": [
+      "wild berry haze"
+    ],
+    "latin_name": "Agave wocomahi",
+    "habitat": "Thrives in arid plateaus & desert",
+    "size": "Typically 2.5 to 4.5 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}
