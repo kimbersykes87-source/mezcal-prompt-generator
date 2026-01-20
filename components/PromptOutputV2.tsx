@@ -147,7 +147,7 @@ export default function PromptOutputV2({ variants }: PromptOutputV2Props) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-muted-olive text-white rounded-lg hover:bg-yellow-agave transition-colors text-lg font-medium"
+              className="px-4 py-2 rounded border border-muted-olive text-white hover:bg-muted-olive transition-colors"
             >
               {link.label}
             </a>

@@ -444,6 +444,9 @@ export interface CardReference {
   // Optional alt paths used by the reference library helper (public assets)
   artworkPng?: string;
   fullCardJpg?: string;
+  // Thumbnail paths for dropdowns
+  artworkThumbnail?: string;
+  cardImageThumbnail?: string;
 }
 
 export interface PillarSubMode {

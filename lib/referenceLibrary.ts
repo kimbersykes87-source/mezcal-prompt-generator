@@ -58,6 +58,9 @@ export async function loadCardReference(cardId: string): Promise<CardReference |
       fullCardPath: `/card-images/${cardId}.jpg`,
       artworkPng: hasArtwork ? `/artwork/${cardId}.png` : undefined,
       fullCardJpg: `/card-images/${cardId}.jpg`,
+      // Thumbnail paths (all cards have thumbnails)
+      artworkThumbnail: hasArtwork ? `/artwork/thumbnails/${cardId}.png` : undefined,
+      cardImageThumbnail: `/card-images/thumbnails/${cardId}.jpg`,
       jsonPath: `/card-data/${cardId}.json`,
     };
     
