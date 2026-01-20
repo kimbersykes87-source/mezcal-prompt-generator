@@ -11,8 +11,17 @@ async function loadPillarForSubModes(pillarId: PillarId): Promise<Pillar | null>
     return pillarCache.get(pillarId)!;
   }
 
+  // Map JSON IDs to filenames (handle level_up -> levelup mismatch)
+  const filenameMap: Record<string, string> = {
+    'level_up': 'levelup',
+    'levelup': 'levelup',
+    'discover': 'discover',
+    'play': 'play',
+  };
+  const filename = filenameMap[pillarId] || pillarId;
+
   try {
-    const response = await fetch(`/config/pillars/${pillarId}.json`);
+    const response = await fetch(`/config/pillars/${filename}.json`);
     if (!response.ok) {
       console.warn(`Pillar ${pillarId} not found`);
       return null;
@@ -22,6 +31,8 @@ async function loadPillarForSubModes(pillarId: PillarId): Promise<Pillar | null>
     if (!pillarCache) {
       pillarCache = new Map();
     }
+    // Cache by both the JSON ID and the filename for lookup
+    pillarCache.set(data.id, data);
     pillarCache.set(pillarId, data);
     
     return data;
