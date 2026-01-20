@@ -273,7 +273,7 @@ async function buildStillPrompt(config: PromptBuildConfig): Promise<string> {
   parts.push('');
   
   // Style and mood
-  if (principle.prompt_fragments.style_line) {
+  if (principle.prompt_fragments?.style_line) {
     parts.push('STYLE:');
     parts.push(principle.prompt_fragments.style_line);
     if (pillar.primary_emotion) {

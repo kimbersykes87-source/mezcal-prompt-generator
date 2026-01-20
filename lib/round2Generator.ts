@@ -4,15 +4,15 @@ export function generateSceneMoments(
   principle: Principle,
   pillar: Pillar
 ): string[] {
-  const principleTemplates = principle.round2_generators.scene_moment_templates || [];
-  const pillarTemplates = pillar.random_generators.scene_moment_templates || [];
+  const principleTemplates = principle.round2_generators?.scene_moment_templates || [];
+  const pillarTemplates = pillar.random_generators?.scene_moment_templates || [];
   
   // Combine templates from both principle and pillar
   const allTemplates = [...principleTemplates, ...pillarTemplates];
   
   // If we have compatibility hints, prefer templates that align with the nudge
-  const compatibilityHint = principle.pillar_compatibility_hints[pillar.id];
-  const hookDetails = pillar.random_generators.hook_details || [];
+  const compatibilityHint = principle.pillar_compatibility_hints?.[pillar.id];
+  const hookDetails = pillar.random_generators?.hook_details || [];
   
   // Weight templates: those matching hook details or mentioned in hints get higher weight
   const weightedTemplates = allTemplates.map(template => ({
@@ -64,14 +64,14 @@ export function generateProps(
   principle: Principle,
   pillar: Pillar
 ): string[][] {
-  const principleProps = principle.round2_generators.props_sets || [];
-  const pillarProps = pillar.random_generators.props_sets || [];
+  const principleProps = principle.round2_generators?.props_sets || [];
+  const pillarProps = pillar.random_generators?.props_sets || [];
   
   // Combine props from both principle and pillar
   const allProps = [...principleProps, ...pillarProps];
   
   // Get compatibility hint for safe props additions
-  const compatibilityHint = principle.pillar_compatibility_hints[pillar.id];
+  const compatibilityHint = principle.pillar_compatibility_hints?.[pillar.id];
   
   // Select 3 unique prop sets
   const selected: string[][] = [];
@@ -88,7 +88,7 @@ export function generateProps(
     }
     
     // Add hook details if relevant
-    const hookDetails = pillar.random_generators.hook_details || [];
+    const hookDetails = pillar.random_generators?.hook_details || [];
     if (hookDetails.length > 0 && Math.random() > 0.5) {
       finalProps.push(hookDetails[Math.floor(Math.random() * hookDetails.length)]);
     }

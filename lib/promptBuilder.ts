@@ -33,16 +33,16 @@ export function buildPrompt(config: PromptConfig): string {
     }
     
     // Add principle prompt fragments
-    const principleLine = principle.prompt_fragments[`${principle.id}_line`] || 
-                         principle.prompt_fragments.atmosphere_line || 
-                         principle.prompt_fragments.action_line || 
-                         principle.prompt_fragments.agave_line || '';
+    const principleLine = principle.prompt_fragments?.[`${principle.id}_line`] || 
+                         principle.prompt_fragments?.atmosphere_line || 
+                         principle.prompt_fragments?.action_line || 
+                         principle.prompt_fragments?.agave_line || '';
     if (principleLine) {
       sceneDesc += principleLine;
     }
     
     // Add product positioning
-    if (principle.product_handling.positioning.length > 0) {
+    if (principle.product_handling?.positioning?.length > 0) {
       sceneDesc += ` ${principle.product_handling.positioning[0]}.`;
     }
     
@@ -116,16 +116,17 @@ export function buildPrompt(config: PromptConfig): string {
     let propsDesc = `Props: ${round2.props.join(', ')}`;
     
     // Add pillar hook details if relevant
-    if (pillar.random_generators.hook_details.length > 0) {
-      const relevantHook = pillar.random_generators.hook_details[0];
+    const hookDetails = pillar.random_generators?.hook_details || [];
+    if (hookDetails.length > 0) {
+      const relevantHook = hookDetails[0];
       if (relevantHook) {
         propsDesc += `, ${relevantHook}`;
       }
     }
     
     // Add compatibility hint props
-    const compatibilityHint = principle.pillar_compatibility_hints[pillar.id];
-    if (compatibilityHint?.safe_props_additions.length > 0) {
+    const compatibilityHint = principle.pillar_compatibility_hints?.[pillar.id];
+    if (compatibilityHint?.safe_props_additions?.length > 0) {
       propsDesc += `, ${compatibilityHint.safe_props_additions.join(', ')}`;
     }
     
@@ -134,13 +135,13 @@ export function buildPrompt(config: PromptConfig): string {
   }
 
   // 7. Style Line
-  let styleLine = principle.prompt_fragments.style_line || '';
+  let styleLine = principle.prompt_fragments?.style_line || '';
   
   // Add principle-specific fragments
-  const principleSpecific = principle.prompt_fragments[`${principle.id}_line`] || 
-                           principle.prompt_fragments.atmosphere_line || 
-                           principle.prompt_fragments.action_line || 
-                           principle.prompt_fragments.agave_line || '';
+  const principleSpecific = principle.prompt_fragments?.[`${principle.id}_line`] || 
+                           principle.prompt_fragments?.atmosphere_line || 
+                           principle.prompt_fragments?.action_line || 
+                           principle.prompt_fragments?.agave_line || '';
   if (principleSpecific) {
     styleLine += `. ${principleSpecific}`;
   }
@@ -159,7 +160,7 @@ export function buildPrompt(config: PromptConfig): string {
   if (pillar.story_intent_rules?.allowed) {
     let storyIntent = '';
     
-    const compatibilityHint = principle.pillar_compatibility_hints[pillar.id];
+    const compatibilityHint = principle.pillar_compatibility_hints?.[pillar.id];
     if (compatibilityHint?.nudge) {
       storyIntent = compatibilityHint.nudge;
     } else {
