@@ -33,6 +33,10 @@ export async function loadCardReference(cardId: string): Promise<CardReference |
     }
     const data = await response.json();
     
+    // Only species cards (numbered ranks) have artwork PNGs, not face cards (K, Q, J)
+    const isSpeciesCard = data.rank && !['K', 'Q', 'J', 'A'].includes(data.rank);
+    const hasArtwork = isSpeciesCard || data.type === 'joker';
+    
     const cardRef: CardReference = {
       id: cardId, // use the filename/id that matches the assets
       originalFilename: data.original_filename || `${cardId}.jpg`,
@@ -50,9 +54,9 @@ export async function loadCardReference(cardId: string): Promise<CardReference |
         jobTitle: data.text?.job_title,
         actionLine: data.text?.action_line,
       },
-      artworkPath: `/artwork/${cardId}.png`,
+      artworkPath: hasArtwork ? `/artwork/${cardId}.png` : '',
       fullCardPath: `/card-images/${cardId}.jpg`,
-      artworkPng: `/artwork/${cardId}.png`,
+      artworkPng: hasArtwork ? `/artwork/${cardId}.png` : undefined,
       fullCardJpg: `/card-images/${cardId}.jpg`,
       jsonPath: `/card-data/${cardId}.json`,
     };

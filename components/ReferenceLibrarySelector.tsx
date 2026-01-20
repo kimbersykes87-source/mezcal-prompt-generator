@@ -1,11 +1,9 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import type { SelectedReferences, CardReference, OutputType } from '@/types';
 import { loadAllCardReferences, getCardDisplayName, isBackCard } from '@/lib/referenceLibrary';
-
-type ImageSourceType = 'card-images' | 'artwork';
 
 interface ReferenceLibrarySelectorProps {
   outputType: OutputType;
@@ -26,9 +24,6 @@ export default function ReferenceLibrarySelector({
   const [warning, setWarning] = useState<string>('');
   const [query, setQuery] = useState('');
   const [suitFilter, setSuitFilter] = useState<'all' | 'spades' | 'hearts' | 'clubs' | 'diamonds'>('all');
-  const [imageSourceType, setImageSourceType] = useState<ImageSourceType>('card-images');
-  const [openDropdown, setOpenDropdown] = useState<number | null>(null);
-  const dropdownRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
 
   useEffect(() => {
     async function loadCards() {
@@ -54,13 +49,6 @@ export default function ReferenceLibrarySelector({
     });
   }, [faceCards, query, suitFilter]);
 
-  const getImageSrc = (card: CardReference): string => {
-    if (imageSourceType === 'artwork') {
-      return card.artworkPng || card.artworkPath || `/artwork/${card.id}.png`;
-    }
-    return card.fullCardJpg || card.fullCardPath || `/card-images/${card.id}.jpg`;
-  };
-
   const maxTotalRefs = outputType === 'video' ? 3 : 4;
   const maxFaceCards = outputType === 'video' ? 3 : 3;
 
@@ -69,7 +57,7 @@ export default function ReferenceLibrarySelector({
     return totalRefs > maxTotalRefs;
   };
 
-  const handleFaceCardSelect = (slotIndex: number, cardId: string) => {
+  const handleFaceCardChange = (slotIndex: number, cardId: string) => {
     const newFaceCardIds = [...selection.faceCardIds];
     
     if (cardId === '') {
@@ -91,7 +79,6 @@ export default function ReferenceLibrarySelector({
     
     setSelection(newSelection);
     onSelectionChange(newSelection);
-    setOpenDropdown(null);
     
     // Load the selected references
     const selectedRefs = allCards.filter(card => 
@@ -99,48 +86,6 @@ export default function ReferenceLibrarySelector({
     );
     onReferencesLoad(selectedRefs);
   };
-
-  const handleRemoveFaceCard = (slotIndex: number) => {
-    const newFaceCardIds = [...selection.faceCardIds];
-    newFaceCardIds.splice(slotIndex, 1);
-    const newSelection = { ...selection, faceCardIds: newFaceCardIds };
-    setSelection(newSelection);
-    onSelectionChange(newSelection);
-    setWarning('');
-    
-    // Load the selected references
-    const selectedRefs = allCards.filter(card => 
-      newFaceCardIds.includes(card.id) || card.id === newSelection.backCardId
-    );
-    onReferencesLoad(selectedRefs);
-  };
-
-  const handleRemoveBackCard = () => {
-    const newSelection = { ...selection, backCardId: undefined };
-    setSelection(newSelection);
-    onSelectionChange(newSelection);
-    setWarning('');
-    
-    // Load the selected references
-    const selectedRefs = allCards.filter(card => 
-      newSelection.faceCardIds.includes(card.id)
-    );
-    onReferencesLoad(selectedRefs);
-  };
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (openDropdown !== null) {
-        const dropdown = dropdownRefs.current[openDropdown];
-        if (dropdown && !dropdown.contains(event.target as Node)) {
-          setOpenDropdown(null);
-        }
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [openDropdown]);
 
   const handleBackCardChange = (checked: boolean) => {
     const newSelection = { 
@@ -177,33 +122,6 @@ export default function ReferenceLibrarySelector({
         </span>
       </div>
 
-      {/* Image Source Toggle */}
-      <div className="flex items-center gap-4 p-3 bg-dark-grey border border-muted-olive rounded">
-        <span className="text-sm text-white">Image Source:</span>
-        <label className="flex items-center gap-2 cursor-pointer text-white">
-          <input
-            type="radio"
-            name="imageSource"
-            value="card-images"
-            checked={imageSourceType === 'card-images'}
-            onChange={() => setImageSourceType('card-images')}
-            className="accent-muted-olive"
-          />
-          <span className="text-sm">Card Images (Full Cards)</span>
-        </label>
-        <label className="flex items-center gap-2 cursor-pointer text-white">
-          <input
-            type="radio"
-            name="imageSource"
-            value="artwork"
-            checked={imageSourceType === 'artwork'}
-            onChange={() => setImageSourceType('artwork')}
-            className="accent-muted-olive"
-          />
-          <span className="text-sm">Artwork (Species Only)</span>
-        </label>
-      </div>
-
       {warning && (
         <div className="p-3 bg-terracotta border border-yellow-agave text-white rounded text-sm">
           {warning}
@@ -237,7 +155,7 @@ export default function ReferenceLibrarySelector({
         </div>
       </div>
 
-      {/* Face Card Selectors with Thumbnail Dropdowns */}
+      {/* Face Card Selectors */}
       <div className="space-y-3">
         {[0, 1, 2].map(slotIndex => {
           const cardId = selection.faceCardIds[slotIndex];
@@ -245,106 +163,28 @@ export default function ReferenceLibrarySelector({
           
           if (!isVisible) return null;
           
-          const selectedCard = cardId ? allCards.find(c => c.id === cardId) : null;
-          
           return (
-            <div key={slotIndex} className="relative">
+            <div key={slotIndex}>
               <label className="block text-sm mb-1 text-white">
                 Face Card {slotIndex + 1} {slotIndex === 0 && '(required)'}
               </label>
-              <div className="relative" ref={(el) => { dropdownRefs.current[slotIndex] = el; }}>
-                <button
-                  type="button"
-                  onClick={() => setOpenDropdown(openDropdown === slotIndex ? null : slotIndex)}
-                  className="w-full px-3 py-2 bg-dark-grey border border-muted-olive rounded text-white text-left flex items-center justify-between hover:border-yellow-agave transition-colors"
-                >
-                  <span className="flex items-center gap-2">
-                    {selectedCard ? (
-                      <>
-                        <div className="w-8 h-10 relative rounded overflow-hidden border border-muted-olive">
-                          <Image
-                            src={getImageSrc(selectedCard)}
-                            alt={getCardDisplayName(selectedCard)}
-                            fill
-                            sizes="32px"
-                            className="object-cover"
-                          />
-                        </div>
-                        <span>{getCardDisplayName(selectedCard)}</span>
-                      </>
-                    ) : (
-                      <span className="opacity-70">-- Select a card --</span>
-                    )}
-                  </span>
-                  <span className="opacity-70">▼</span>
-                </button>
-                
-                {openDropdown === slotIndex && (
-                  <div className="absolute z-50 w-full mt-1 bg-dark-grey border border-muted-olive rounded shadow-lg max-h-96 overflow-y-auto">
-                    <div className="p-2">
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                        {filteredFaceCards.map(card => {
-                          const isSelected = card.id === cardId;
-                          const isDisabled = selection.faceCardIds.includes(card.id) && !isSelected;
-                          
-                          return (
-                            <button
-                              key={card.id}
-                              type="button"
-                              onClick={() => !isDisabled && handleFaceCardSelect(slotIndex, card.id)}
-                              disabled={isDisabled}
-                              className={`relative aspect-[2.5/3.5] rounded border-2 overflow-hidden transition-all ${
-                                isSelected
-                                  ? 'border-yellow-agave ring-2 ring-yellow-agave/50'
-                                  : isDisabled
-                                  ? 'border-dark-grey opacity-30 cursor-not-allowed'
-                                  : 'border-muted-olive hover:border-yellow-agave hover:scale-105'
-                              }`}
-                            >
-                              <Image
-                                src={getImageSrc(card)}
-                                alt={getCardDisplayName(card)}
-                                fill
-                                sizes="150px"
-                                className="object-cover"
-                              />
-                              {isSelected && (
-                                <div className="absolute inset-0 bg-yellow-agave/20 flex items-center justify-center">
-                                  <span className="text-yellow-agave font-bold text-lg">✓</span>
-                                </div>
-                              )}
-                              {isDisabled && (
-                                <div className="absolute inset-0 bg-dark-grey/80 flex items-center justify-center">
-                                  <span className="text-white/50 text-xs">Selected</span>
-                                </div>
-                              )}
-                              <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-1">
-                                <div className="text-xs text-white truncate text-center">
-                                  {card.suit} {card.rank}
-                                </div>
-                                <div className="text-xs text-white/80 truncate text-center">
-                                  {card.text?.speciesName || card.text?.jobTitle || 'Card'}
-                                </div>
-                              </div>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              {selectedCard && (
-                <button
-                  type="button"
-                  onClick={() => handleRemoveFaceCard(slotIndex)}
-                  className="mt-2 text-xs text-terracotta hover:text-red-500 flex items-center gap-1"
-                >
-                  <span>✕</span>
-                  <span>Remove</span>
-                </button>
-              )}
+              <select
+                value={cardId || ''}
+                onChange={(e) => handleFaceCardChange(slotIndex, e.target.value)}
+                className="w-full px-3 py-2 bg-dark-grey border border-muted-olive rounded text-white"
+                required={slotIndex === 0}
+              >
+                <option value="">-- Select a card --</option>
+                {filteredFaceCards.map(card => (
+                  <option 
+                    key={card.id} 
+                    value={card.id}
+                    disabled={selection.faceCardIds.includes(card.id) && cardId !== card.id}
+                  >
+                    {getCardDisplayName(card)}
+                  </option>
+                ))}
+              </select>
             </div>
           );
         })}
@@ -353,28 +193,16 @@ export default function ReferenceLibrarySelector({
       {/* Card Back */}
       {backCard && (
         <div>
-          <div className="flex items-center justify-between">
-            <label className="flex items-center gap-2 cursor-pointer text-white">
-              <input
-                type="checkbox"
-                checked={!!selection.backCardId}
-                onChange={(e) => handleBackCardChange(e.target.checked)}
-                className="accent-muted-olive"
-                disabled={exceedsLimit(selection.faceCardIds, backCard.id)}
-              />
-              <span>Include Card Back (optional but recommended)</span>
-            </label>
-            {selection.backCardId && (
-              <button
-                type="button"
-                onClick={handleRemoveBackCard}
-                className="text-xs text-terracotta hover:text-red-500 flex items-center gap-1"
-              >
-                <span>✕</span>
-                <span>Remove</span>
-              </button>
-            )}
-          </div>
+          <label className="flex items-center gap-2 cursor-pointer text-white">
+            <input
+              type="checkbox"
+              checked={!!selection.backCardId}
+              onChange={(e) => handleBackCardChange(e.target.checked)}
+              className="accent-muted-olive"
+              disabled={exceedsLimit(selection.faceCardIds, backCard.id)}
+            />
+            <span>Include Card Back (optional but recommended)</span>
+          </label>
         </div>
       )}
 
@@ -392,17 +220,19 @@ export default function ReferenceLibrarySelector({
       {/* Preview Grid */}
       {selection.faceCardIds.length > 0 && (
         <div className="mt-4">
-          <div className="text-sm text-white mb-2">Preview ({imageSourceType === 'artwork' ? 'Artwork' : 'Card Images'}):</div>
+          <div className="text-sm text-white mb-2">Preview:</div>
           <div className="grid grid-cols-3 gap-3">
             {selection.faceCardIds.map(cardId => {
               const card = allCards.find(c => c.id === cardId);
               if (!card) return null;
+              // Use artwork if available, otherwise fall back to card image (face cards don't have artwork)
+              const imageSrc = (card.artworkPng || card.artworkPath) || (card.fullCardJpg || card.fullCardPath || '/card-images/057_card-back.jpg');
               
               return (
                 <div key={cardId} className="text-center space-y-1">
                   <div className="aspect-[2.5/3.5] relative overflow-hidden rounded border border-yellow-agave bg-dark-grey">
                     <Image
-                      src={getImageSrc(card)}
+                      src={imageSrc}
                       alt={getCardDisplayName(card)}
                       fill
                       sizes="150px"
@@ -420,7 +250,7 @@ export default function ReferenceLibrarySelector({
               <div className="text-center space-y-1">
                 <div className="aspect-[2.5/3.5] relative overflow-hidden rounded border border-yellow-agave bg-dark-grey">
                   <Image
-                    src={getImageSrc(backCard)}
+                    src={(backCard.artworkPng || backCard.artworkPath) || (backCard.fullCardJpg || backCard.fullCardPath || '/card-images/057_card-back.jpg')}
                     alt="Card Back"
                     fill
                     sizes="150px"

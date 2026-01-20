@@ -47,8 +47,17 @@ export async function loadPillar(id: string): Promise<Pillar> {
     return pillarsCache.get(id)!;
   }
 
+  // Map JSON IDs to filenames (handle level_up -> levelup mismatch)
+  const filenameMap: Record<string, string> = {
+    'level_up': 'levelup',
+    'levelup': 'levelup',
+    'discover': 'discover',
+    'play': 'play',
+  };
+  const filename = filenameMap[id] || id;
+
   try {
-    const response = await fetch(`/config/pillars/${id}.json`);
+    const response = await fetch(`/config/pillars/${filename}.json`);
     if (!response.ok) {
       throw new Error(`Failed to load pillar ${id}: ${response.statusText}`);
     }
@@ -57,6 +66,8 @@ export async function loadPillar(id: string): Promise<Pillar> {
     if (!pillarsCache) {
       pillarsCache = new Map();
     }
+    // Cache by both the JSON ID and the filename for lookup
+    pillarsCache.set(data.id, data);
     pillarsCache.set(id, data);
     
     return data;
