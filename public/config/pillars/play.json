@@ -1,0 +1,439 @@
+{
+  "id": "play",
+  "name": "Play",
+  "version": "1.0.0",
+  "purpose": "Make mezcal learning feel like a game: social energy, friendly chaos, laughter, hands in motion, cards in use. The cards spark banter, decisions, dares, and ‘one more round’ momentum.",
+  "primary_emotion": "fun",
+  "secondary_emotions": [
+    "connection",
+    "mischief",
+    "momentum",
+    "warmth",
+    "light competition"
+  ],
+  "what_this_pillar_is": [
+    "Game-night energy where the cards are used, not displayed.",
+    "Hands-on interactions: shuffling, dealing, fanning, choosing, passing cards.",
+    "Social context: friends clustered at a table, casual bar rituals, lived-in surfaces.",
+    "Playful decision-making: which mezcal next, which agave wins, friendly debate."
+  ],
+  "what_this_pillar_is_not": [
+    "Quiet macro agave study (that is Discover).",
+    "Instructional how-to optimisation (that is Level Up).",
+    "Stiff posed lifestyle shoot or glossy ad perfection."
+  ],
+  "content_goals": {
+    "brand_goal": "Position the cards as the ultimate mezcal icebreaker: the thing you bring out that instantly makes the night better.",
+    "audience_goal": "Make people want to pick up the deck and start playing right now.",
+    "content_goal": "High-repeat, scroll-stopping ‘I can hear this photo’ moments."
+  },
+  "visual_story_rules": {
+    "core_rule": "Every Play image must show cards being actively used in a real moment.",
+    "hook_types_ranked": [
+      "hands mid-shuffle with blurred edges",
+      "cards mid-pass over glasses",
+      "card fan held up during laughter",
+      "a chaotic-but-readable tabletop layout",
+      "a tiny accident (spilled salt, knocked coaster, lemon wedge sliding)",
+      "split-second choice moment (card hovering above table)"
+    ],
+    "composition_bias": [
+      "tight, intimate framing",
+      "lived-in clutter, not messy chaos",
+      "product readable but not perfectly staged"
+    ],
+    "tempo": {
+      "pace": "fast",
+      "energy": "social",
+      "motion_required": true,
+      "motion_types": [
+        "shuffle",
+        "deal",
+        "pass",
+        "fan",
+        "tap card on table",
+        "toast with glasses (secondary)"
+      ]
+    }
+  },
+  "play_formats": {
+    "from_marketing_plan": [
+      {
+        "id": "games_in_wild_places",
+        "title": "Games in Wild Places",
+        "one_liner": "Playing the deck outdoors with adventure scenery behind.",
+        "visual_hooks": [
+          "cards foreground sharp, landscape background soft",
+          "wind, warm light, travel vibe"
+        ],
+        "scene_rules": [
+          "Cards must still look true scale and believable outdoors",
+          "Avoid postcard-wide landscapes: keep it intimate and playable",
+          "Hands are likely present (holding card or dealing)"
+        ],
+        "best_camera": ["45-degree close", "handheld close"],
+        "best_light": ["golden hour", "late sun glow"]
+      },
+      {
+        "id": "bottle_knowledge",
+        "title": "Bottle Knowledge",
+        "one_liner": "A playful ‘oops’ or interaction with mezcal props that sparks conversation.",
+        "visual_hooks": [
+          "almost knocked bottle (unbranded label only)",
+          "salt dish tipped",
+          "lime wedge rolling",
+          "card catching the chaos"
+        ],
+        "critical_constraints": [
+          "Mezcal bottles must have blank/unbranded labels",
+          "Poured mezcal must be still, never bubbly",
+          "No readable menu text"
+        ],
+        "scene_rules": [
+          "It should feel accidental, not staged slapstick",
+          "Cards remain the anchor object in-frame"
+        ],
+        "best_camera": ["handheld close", "over-shoulder"],
+        "best_light": ["warm lamp glow", "candle glow"]
+      },
+      {
+        "id": "hands_on",
+        "title": "Hands On",
+        "one_liner": "Full shuffles, deals, spreads. Pure tactile gameplay.",
+        "visual_hooks": [
+          "shallow depth of field freezes one sharp card edge",
+          "motion blur on surrounding cards",
+          "rings, tattoos, rolled sleeves add character"
+        ],
+        "scene_rules": [
+          "Hands and cards dominate frame",
+          "Faces are optional, but should be partial or blurred for authenticity",
+          "No perfect casino table vibe, keep it casual and real"
+        ],
+        "best_camera": ["macro close-crop", "45-degree close"],
+        "best_light": ["warm lamp glow", "mixed bar light"]
+      },
+      {
+        "id": "games_with_friends",
+        "title": "Games With Friends",
+        "one_liner": "Friends laughing while the deck guides what to drink next.",
+        "visual_hooks": [
+          "background bustle, foreground cards sharp",
+          "candid laughter and debate",
+          "glasses and coasters scattered naturally"
+        ],
+        "scene_rules": [
+          "No polished posing, no influencer smiles",
+          "Keep faces partial or candid, not full portrait framing",
+          "Cards must stay readable and true scale"
+        ],
+        "best_camera": ["over-shoulder", "handheld close"],
+        "best_light": ["warm lamp glow", "candle glow"]
+      }
+    ],
+    "play_prompt_patterns": [
+      "hands mid-shuffle with one sharp card edge",
+      "card fan held up during laughter",
+      "cards mid-pass above a timber table",
+      "friends clustered around a worn bar table, cards guiding debate",
+      "outdoor ‘adventure table’ with cards foreground sharp"
+    ]
+  },
+  "product_focus_rules": {
+    "allowed_primary_subjects": [
+      "hand holding a card",
+      "single card in action (hovering, being slid, tapped)",
+      "multiple cards (small spread) in play",
+      "deck box (rare, only if incidental on table edge)"
+    ],
+    "best_fit_for_play": [
+      "hand holding a card",
+      "hands shuffling",
+      "cards + mezcal glass in active moment"
+    ],
+    "avoid_in_play": [
+      "static upright hero card like a museum exhibit",
+      "perfect centred packshot look",
+      "macro agave-only textures (that belongs in Discover)"
+    ],
+    "scale_locks": [
+      "Playing cards must be true-to-size 2.5 inches by 3.5 inches.",
+      "Cards must fit fully inside one adult hand.",
+      "No oversized cards, no warped edges."
+    ]
+  },
+  "people_and_framing": {
+    "primary_rule": "Play is social. Humans matter, but the shot still isn’t a portrait.",
+    "allowed_people_modes_ranked": [
+      {
+        "id": "hands_only",
+        "label": "Hands only",
+        "weight": 0.4,
+        "notes": "Best default: rings, tattoos, rolled sleeves, quick movement."
+      },
+      {
+        "id": "partial_faces",
+        "label": "Partial faces",
+        "weight": 0.3,
+        "notes": "Candid laughter, cropped at eyes or mouth, never posed."
+      },
+      {
+        "id": "candid_group",
+        "label": "Candid group",
+        "weight": 0.3,
+        "notes": "Background faces allowed but not centred, shallow DOF blur."
+      }
+    ],
+    "face_policy": {
+      "strict": true,
+      "rule": "Avoid full portrait faces. Prefer partial faces or background blur. The hero stays cards + hands."
+    },
+    "casting_notes": [
+      "Diverse 25–40",
+      "real people, lived-in faces, not models",
+      "tattoos, vests, rolled-up sleeves, rings, bartenders",
+      "natural charisma, genuine expressions"
+    ],
+    "wardrobe_texture_keywords": [
+      "rolled sleeves",
+      "denim jacket",
+      "vest",
+      "workwear shirt",
+      "stacked bracelets",
+      "rings",
+      "tattoos"
+    ]
+  },
+  "locations": {
+    "preferred": [
+      {
+        "id": "neighborhood_bar",
+        "label": "Low-lit neighbourhood bar",
+        "notes": "Worn timber tables, warm lamps, casual crowd energy."
+      },
+      {
+        "id": "urban_loft",
+        "label": "Urban loft hangout",
+        "notes": "Exposed brick, compact table, intimate lighting."
+      },
+      {
+        "id": "backyard_patio",
+        "label": "Backyard patio",
+        "notes": "String lights, relaxed group clustering around a table."
+      },
+      {
+        "id": "cabin_table",
+        "label": "Cabin table",
+        "notes": "Timber grain, cosy, game-night ritual feel."
+      },
+      {
+        "id": "outdoor_adventure_spot",
+        "label": "Outdoor adventure spot",
+        "notes": "Cliffside / mountain vibe, but keep it tight and playable."
+      }
+    ],
+    "avoid": [
+      "flashy nightclub venues",
+      "wide empty spaces",
+      "sterile modern studios",
+      "luxury cocktail bars that feel too polished"
+    ],
+    "surface_textures": [
+      "scarred wood",
+      "zinc bar top",
+      "worn timber",
+      "coasters with stains",
+      "napkins with creases"
+    ]
+  },
+  "props": {
+    "allowed": [
+      "copita or small tasting glass",
+      "lime wedge",
+      "sal de gusano",
+      "worn coasters",
+      "matchbook",
+      "bar tools (subtle)",
+      "crumpled napkin",
+      "tiny bowl of citrus peel"
+    ],
+    "rules": [
+      "Props must feel incidental and lived-in, not arranged.",
+      "Use 3–6 small details max to avoid clutter overload.",
+      "Avoid readable text on menus, notebooks, receipts."
+    ],
+    "mezcal_specific_constraints": [
+      "Any mezcal bottles must have blank/unbranded labels only.",
+      "Poured mezcal must be still liquid, never bubbly or fizzy."
+    ]
+  },
+  "camera_and_lighting_preferences": {
+    "camera_angles_ranked": [
+      {
+        "id": "handheld_close",
+        "label": "Handheld close",
+        "weight": 0.3,
+        "notes": "Best for motion and real-life energy."
+      },
+      {
+        "id": "over_shoulder",
+        "label": "Over-shoulder",
+        "weight": 0.25,
+        "notes": "Great for ‘you are there’ POV, cards foreground sharp."
+      },
+      {
+        "id": "angle_45",
+        "label": "45-degree",
+        "weight": 0.25,
+        "notes": "Classic bar table framing, adds depth."
+      },
+      {
+        "id": "top_down",
+        "label": "Top-down",
+        "weight": 0.1,
+        "notes": "Only for active spreads, not static layouts."
+      },
+      {
+        "id": "macro_crop",
+        "label": "Macro close-crop",
+        "weight": 0.1,
+        "notes": "Use for card edge sharpness + motion blur contrast."
+      }
+    ],
+    "lighting_ranked": [
+      {
+        "id": "warm_lamp",
+        "label": "Warm lamp glow",
+        "weight": 0.4,
+        "notes": "Intimate, lived-in bar warmth."
+      },
+      {
+        "id": "candle_glow",
+        "label": "Candle glow",
+        "weight": 0.2,
+        "notes": "Moody highlights, keep faces secondary."
+      },
+      {
+        "id": "golden_hour",
+        "label": "Golden hour",
+        "weight": 0.25,
+        "notes": "Best for outdoor play, cosy warmth."
+      },
+      {
+        "id": "mixed_low_light",
+        "label": "Mixed low light (bar ambience)",
+        "weight": 0.15,
+        "notes": "Natural noise and grit allowed."
+      }
+    ],
+    "depth_of_field_rule": "Freeze one sharp element (card edge, card face, pour rim) with surrounding blur to amplify motion and realism."
+  },
+  "motion_design": {
+    "must_include_one": [
+      "motion blur on cards mid-shuffle",
+      "a card mid-pass above the table",
+      "a hand sliding a card across wood",
+      "a fan of cards moving toward camera"
+    ],
+    "keep_realistic": [
+      "no floating cards with no cause",
+      "no extreme exaggerated splash physics",
+      "no surreal effects"
+    ]
+  },
+  "platform_guidance": {
+    "best_for_ig_story_or_reel": [
+      "hands-on shuffle close-ups",
+      "card fan POV",
+      "over-shoulder bar moment with card + glass"
+    ],
+    "best_for_carousel": [
+      "sequence of shuffling frames",
+      "outdoor wild place play set",
+      "friends debating with cards as the anchor"
+    ]
+  },
+  "random_generators": {
+    "scene_moment_templates": [
+      "Hands shuffle fast, one card edge stays razor sharp",
+      "A card is slid across a scarred table mid-laughter",
+      "Friends pass cards over tasting glasses during debate",
+      "A fan of cards flashes while someone picks the next pour",
+      "A messy-but-fun spread forms as a round begins",
+      "A card hovers above the table as someone decides",
+      "A quick deal lands beside a copita with a soft clack",
+      "Outdoor game moment: one hand holds a card to the sunset"
+    ],
+    "location_vibes": [
+      "low-lit neighbourhood bar",
+      "urban loft table",
+      "backyard patio under string lights",
+      "cabin table with warm timber",
+      "outdoor cliffside table at golden hour"
+    ],
+    "props_sets": [
+      ["copita glass", "lime wedge", "sal de gusano", "worn coasters"],
+      ["matchbook", "crumpled napkin", "salt dish", "citrus peel"],
+      ["bar tools (subtle)", "wet ring marks", "coaster stains", "small bowl"],
+      ["blank-label mezcal bottle (background)", "copita", "lime wedge", "coasters"]
+    ],
+    "hook_details": [
+      "motion blur + one frozen sharp card edge",
+      "hands collide in a mid-pass exchange",
+      "rings and tattoos flashing in warm light",
+      "table clutter feels lived-in but controlled",
+      "foreground card face stays perfectly readable"
+    ]
+  },
+  "story_intent_rules": {
+    "allowed": true,
+    "max_sentences": 2,
+    "guidance": [
+      "Keep it about the moment, not the brand.",
+      "Never include labels like 'Pillar: Play' in the output prompt.",
+      "Focus on social energy and cards sparking banter."
+    ]
+  },
+  "hard_constraints_locked": [
+    "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
+    "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
+    "no warped hands, no extra fingers",
+    "mezcal bottles must have blank or unbranded labels only",
+    "poured mezcal must be still liquid, never bubbly or fizzy",
+    "no readable text anywhere in the scene except on the reference card itself; all other writing must be blurred or illegible",
+    "playing cards must be true-to-size 2.5 inches by 3.5 inches, fit fully in one adult hand, never oversized"
+  ],
+  "anti_patterns": {
+    "avoid_phrases": [
+      "studio product shot",
+      "luxury editorial portrait",
+      "perfectly staged table layout",
+      "casino tournament vibe"
+    ],
+    "avoid_visuals": [
+      "static upright card like a museum piece",
+      "full face portraits centred as the hero",
+      "readable menus, receipts, notebooks",
+      "branded bottle labels",
+      "bubbly/fizzy liquid",
+      "sterile clean white tabletops"
+    ]
+  },
+  "scoring_heuristics": {
+    "good_output_signals": [
+      "you can feel motion happening right now",
+      "hands and cards dominate the frame",
+      "faces are secondary or cropped, candid not posed",
+      "warm low light and lived-in table texture",
+      "cards look true scale and not warped"
+    ],
+    "bad_output_signals": [
+      "feels posed or staged like an ad",
+      "cards are oversized or distorted",
+      "too many props creating clutter soup",
+      "faces become the subject",
+      "bottle labels appear branded or readable",
+      "liquid looks fizzy"
+    ]
+  }
+}

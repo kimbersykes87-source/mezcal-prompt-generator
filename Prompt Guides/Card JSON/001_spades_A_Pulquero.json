@@ -1,0 +1,30 @@
+{
+  "id": "001_spades_A",
+  "original_filename": "001_spades_A.jpg",
+  "new_filename": "001_spades_A_Pulquero.jpg",
+  "type": "face_card_species",
+  "suit": "spades",
+  "rank": "A",
+  "colourway": null,
+  "text": {
+    "species_name": "Pulquero",
+    "tagline": "The Bulky Brute",
+    "tasting_notes": [
+      "pulpy",
+      "fruit",
+      "fuzz"
+    ],
+    "latin_name": "Agave atrovirens",
+    "habitat": "Thrives in mountains & canyons",
+    "size": "Typically 6 to 10 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "id": "agaveculture",
+  "name": "Agaveculture",
+  "version": "1.0.0",
+  "purpose": "Earthy, intimate agave-first photography. Crop tight on agave textures and forms. Mostly plant-only with rare human context. Diffused natural light, gritty realism, no staged gardens.",
+  "priority": 3,
+  "mood_keywords": [
+    "earthy",
+    "textural",
+    "quiet",
+    "intimate grit",
+    "plant-first",
+    "natural",
+    "documentary",
+    "raw"
+  ],
+  "core_rules": {
+    "hero_focus": [
+      "Crop tight on agave textures and forms: slender spears, dense rosettes, rough leaf edges fraying against light.",
+      "Show fibrous hearts peeling back with subtle gradients from green to ash.",
+      "Prioritise tactile surface detail: waxy bloom, serrated margins, dust, fibres."
+    ],
+    "composition": {
+      "framing_style": [
+        "tight crop",
+        "vertical spears or radial rosette forms",
+        "dense texture filling the frame",
+        "soft background falloff"
+      ],
+      "plant_ratio_rule": {
+        "plant_only_target_percent": 85,
+        "context_percent": 15,
+        "rule": "Keep 85% plant-only. Human elements (hands, piña slices) are rare and should appear blurred at edges for quiet context."
+      },
+      "center_of_gravity": [
+        "agave texture dominates the central 70 percent of frame",
+        "if product appears, it must feel integrated and not staged"
+      ],
+      "background_behavior": [
+        "uneven terrain, natural habitat",
+        "soft diffused backdrop",
+        "no decorative garden composition"
+      ]
+    },
+    "texture_language": {
+      "must_show": [
+        "leaf surface texture (waxy bloom, matte grit)",
+        "serrated edge detail",
+        "fibre strands",
+        "natural imperfections (scratches, dust, weathering)"
+      ],
+      "avoid": [
+        "overly glossy plastic sheen",
+        "clean manicured plant surfaces",
+        "hyper-saturated neon colour grading"
+      ]
+    }
+  },
+  "locations": {
+    "preferred": [
+      {
+        "id": "oaxaca_field_edge",
+        "label": "Oaxaca field edges",
+        "notes": "Plants in habitat, uneven ground, real farming context."
+      },
+      {
+        "id": "rocky_hillside",
+        "label": "Rocky hillsides",
+        "notes": "Raw terrain, native agaves, wind-worn textures."
+      },
+      {
+        "id": "agave_nursery",
+        "label": "Agave nursery",
+        "notes": "Rows of plants, soil texture, unpolished realism."
+      },
+      {
+        "id": "raw_outdoor_spot",
+        "label": "Raw outdoor spots",
+        "notes": "Natural backdrops, no staged gardens, no landscaping."
+      }
+    ],
+    "avoid": [
+      "staged botanical gardens",
+      "manicured landscaped gardens",
+      "indoor studio plant setups",
+      "tourist-perfect agave fields with clean staged props"
+    ],
+    "ground_textures": [
+      "red earth",
+      "rock and gravel",
+      "dry dust",
+      "patchy soil",
+      "field debris"
+    ]
+  },
+  "casting": {
+    "human_elements_ratio": {
+      "strict": true,
+      "rule": "Minimal human elements. No groups or models. Humans only appear as contextual touches (hands, partial figure, piña handling) and never become the subject."
+    },
+    "allowed_humans": [
+      {
+        "id": "jimador",
+        "label": "Weathered jimador",
+        "notes": "40+, sun-lined faces, callused hands, genuine labour context. Prefer hands over faces."
+      }
+    ],
+    "framing_preferences": [
+      "hands only",
+      "partial figures blending into plants",
+      "faces rarely visible and never posed"
+    ],
+    "skin_texture_notes": [
+      "realistic skin texture",
+      "dirt and sweat present",
+      "no polished beauty lighting"
+    ],
+    "avoid": [
+      "models",
+      "fashion styling",
+      "posed portraits",
+      "crowds"
+    ]
+  },
+  "camera": {
+    "preferred_angles": [
+      {
+        "id": "macro_crop",
+        "label": "Macro close-crop",
+        "weight": 0.45,
+        "notes": "Primary look: fibres, edges, leaf texture, rosette core."
+      },
+      {
+        "id": "handheld_close",
+        "label": "Handheld close POV",
+        "weight": 0.25,
+        "notes": "Documentary feel. Slight imperfection allowed."
+      },
+      {
+        "id": "angle_45",
+        "label": "45-degree close angle",
+        "weight": 0.2,
+        "notes": "Great for spears stretching upward with depth."
+      },
+      {
+        "id": "top_down",
+        "label": "Top-down rosette crop",
+        "weight": 0.1,
+        "notes": "Only when it’s dense and textural, not graphic-flat."
+      }
+    ],
+    "lens_language": [
+      "shallow depth of field",
+      "soft focus falloff",
+      "detail-forward texture clarity",
+      "no ultra-wide distortion"
+    ],
+    "focus_targets_ranked": [
+      "leaf edge serrations",
+      "fibrous heart strands",
+      "rosette core texture",
+      "surface dust and wax bloom",
+      "natural scars and weathering"
+    ],
+    "framing_rules": [
+      "crop tight, fill the frame with agave textures",
+      "no wide landscape establishing shots unless still texture-dominant",
+      "keep the scene quiet and grounded"
+    ]
+  },
+  "lighting": {
+    "preferred": [
+      {
+        "id": "diffused_natural",
+        "label": "Diffused natural light",
+        "weight": 0.65,
+        "notes": "Soft, even, tactile. Priority lighting mode."
+      },
+      {
+        "id": "overcast_soft",
+        "label": "Overcast soft light",
+        "weight": 0.2,
+        "notes": "Muted shadows, earthy realism."
+      },
+      {
+        "id": "early_late_sun",
+        "label": "Soft edge sunlight (early/late)",
+        "weight": 0.15,
+        "notes": "Only gentle rim light, avoid harsh glare."
+      }
+    ],
+    "avoid": [
+      "hard midday sun glare",
+      "studio lighting",
+      "dramatic nightclub colour casts",
+      "harsh flash"
+    ],
+    "palette_notes": [
+      "earthy palettes",
+      "greens to ash tones",
+      "muted blues",
+      "red soil accents",
+      "no artificial neon saturation"
+    ]
+  },
+  "product_handling": {
+    "integration_rule": {
+      "strict": true,
+      "rule": "If a playing card or box appears, it must feel discovered in the environment, not staged. Keep it subtle and secondary to the agave."
+    },
+    "scale_locks": [
+      "Playing cards must be true-to-size 2.5 inches by 3.5 inches.",
+      "The card must fit fully inside one adult hand.",
+      "No oversized cards, no warped edges."
+    ],
+    "positioning": [
+      "card partially tucked into soil or leaning against rock/wood",
+      "card near agave base with natural dust",
+      "card in hand near plant texture (hands are contextual only)"
+    ],
+    "avoid": [
+      "clean pristine card floating in air",
+      "perfect centered hero billboard product shot",
+      "indoor tabletop product scene"
+    ]
+  },
+  "prompt_fragments": {
+    "style_line": "photorealistic, documentary realism, earthy palette, intimate grit, tactile texture focus, shallow depth of field, diffused natural light",
+    "agave_line": "tight crop on agave textures and forms, slender spears, dense rosettes, rough leaf edges fraying against light, fibrous hearts peeling back",
+    "ratio_line": "85% plant-only composition, rare contextual human touch at edges only",
+    "environment_line": "raw terrain, field edges or rocky hillsides, uneven ground, no staged gardens"
+  },
+  "round2_generators": {
+    "scene_moment_templates": [
+      "A close crop of agave spears catching soft diffused light",
+      "Fibrous agave heart peeling back with dusty texture detail",
+      "Leaf serrations and wax bloom in quiet natural shadow",
+      "Dense rosette core with subtle green-to-ash gradients",
+      "Callused hands brush agave fibres at the frame edge",
+      "Piña slice texture hinted at the corner, plant still dominates",
+      "Wind lifts dust across agave leaves, texture stays sharp",
+      "Agave rows fade softly behind one razor-textured foreground plant"
+    ],
+    "props_sets": [
+      ["red soil", "rock gravel", "dry dust"],
+      ["agave fibres", "rough leaf edges", "field debris"],
+      ["weathered hand (edge only)", "piña fibres (edge only)", "dust"],
+      ["uneven terrain", "small stones", "dry leaf litter"],
+      ["natural scars", "wax bloom", "serrated margins"],
+      ["nursery row blur", "soil clumps", "muted background plants"]
+    ],
+    "props_notes": [
+      "Props must be environmental textures, not bar props.",
+      "Avoid bottles, glasses, cards-as-hero, or any indoor objects.",
+      "Any human context must be minimal and peripheral."
+    ]
+  },
+  "pillar_compatibility_hints": {
+    "discover": {
+      "nudge": "Use the crop to teach texture differences between agaves without text. Visual curiosity only.",
+      "safe_props_additions": ["subtle colour gradient", "leaf serration detail", "wax bloom texture"]
+    },
+    "play": {
+      "nudge": "Keep play subtle: the joy comes from visual texture and discovery, not social scenes.",
+      "safe_props_additions": ["wind movement", "dust lift", "natural imperfections"]
+    },
+    "level_up": {
+      "nudge": "Show deeper appreciation: labour context or field authenticity, minimal human touch only.",
+      "safe_props_additions": ["callused hands (edge)", "piña fibres (edge)", "weathered tools blurred (rare)"]
+    }
+  },
+  "hard_constraints_locked": [
+    "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
+    "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
+    "no warped hands, no extra fingers",
+    "mezcal bottles must have blank or unbranded labels only",
+    "poured mezcal must be still liquid, never bubbly or fizzy",
+    "no readable text anywhere in the scene except on the reference card itself; all other writing must be blurred or illegible",
+    "playing cards must be true-to-size 2.5 inches by 3.5 inches, fit fully in one adult hand, never oversized",
+    "agaveculture rule: 85% plant-only, humans only as minimal peripheral context, no groups"
+  ],
+  "anti_patterns": {
+    "avoid_phrases": [
+      "studio macro product photography",
+      "botanical garden showcase",
+      "perfect landscaped field",
+      "tourist postcard view"
+    ],
+    "avoid_visuals": [
+      "staged gardens",
+      "models posing with agave",
+      "wide landscape hero shots with tiny agave",
+      "neon colour grading",
+      "plastic-looking leaves",
+      "clean indoor plant setups"
+    ]
+  },
+  "scoring_heuristics": {
+    "good_output_signals": [
+      "agave texture fills the frame",
+      "diffused natural light with soft shadows",
+      "earthy muted palette",
+      "minimal human context only at edges",
+      "no staged garden vibe"
+    ],
+    "bad_output_signals": [
+      "too wide and scenic",
+      "plant looks manicured or fake glossy",
+      "humans dominate the frame",
+      "studio lighting or artificial colour cast",
+      "crowds or models appear"
+    ]
+  }
+}

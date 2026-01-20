@@ -1,0 +1,28 @@
+{
+  "id": "009",
+  "original_filename": "009_spades_6.jpg",
+  "new_filename": "009_spades_6_Mexicano.json",
+  "type": "face_card_species",
+  "suit": "spades",
+  "rank": "6",
+  "colourway": null,
+  "text": {
+    "species_name": "Mexicano",
+    "tagline": "The Solitary Powerhouse",
+    "tasting_notes": [
+      "thorny rose smoke"
+    ],
+    "latin_name": "Agave rhodacantha",
+    "habitat": "Thrives in mountains & canyons",
+    "size": "Typically 4.5 to 7 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

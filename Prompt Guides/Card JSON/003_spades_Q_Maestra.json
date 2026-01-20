@@ -1,0 +1,26 @@
+{
+  "id": "003_spades_Q",
+  "original_filename": "003_spades_Q.jpg",
+  "new_filename": "003_spades_Q_Maestra.jpg",
+  "type": "court_card",
+  "suit": "spades",
+  "rank": "Q",
+  "colourway": null,
+  "text": {
+    "species_name": null,
+    "tagline": null,
+    "tasting_notes": [],
+    "latin_name": null,
+    "habitat": null,
+    "size": null,
+    "job_title": "Maestra",
+    "action_line": "Scooping the elixir"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

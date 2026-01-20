@@ -1,0 +1,26 @@
+{
+  "id": "004_spades_J",
+  "original_filename": "004_spades_J.jpg",
+  "new_filename": "004_spades_J_Jimedor.jpg",
+  "type": "court_card",
+  "suit": "spades",
+  "rank": "J",
+  "colourway": null,
+  "text": {
+    "species_name": null,
+    "tagline": null,
+    "tasting_notes": [],
+    "latin_name": null,
+    "habitat": null,
+    "size": null,
+    "job_title": "Jimedor",
+    "action_line": "Yeilding ripe piñas"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

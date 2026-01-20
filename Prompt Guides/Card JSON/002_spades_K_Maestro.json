@@ -1,0 +1,26 @@
+{
+  "id": "002_spades_K",
+  "original_filename": "002_spades_K.jpg",
+  "new_filename": "002_spades_K_Maestro.jpg",
+  "type": "court_card",
+  "suit": "spades",
+  "rank": "K",
+  "colourway": null,
+  "text": {
+    "species_name": null,
+    "tagline": null,
+    "tasting_notes": [],
+    "latin_name": null,
+    "habitat": null,
+    "size": null,
+    "job_title": "Maestro",
+    "action_line": "Igniting the hearth"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

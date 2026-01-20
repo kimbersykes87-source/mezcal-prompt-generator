@@ -1,0 +1,316 @@
+{
+  "id": "action",
+  "name": "Action",
+  "version": "1.0.0",
+  "purpose": "Fast, kinetic, documentary-style scenes where motion is the hero. The image should feel mid-moment, not posed.",
+  "priority": 2,
+  "mood_keywords": [
+    "kinetic",
+    "imperfect",
+    "mid-moment",
+    "lived-in",
+    "high energy",
+    "tactile",
+    "unscripted"
+  ],
+  "core_rules": {
+    "hero_focus": [
+      "Motion at the heart: decks mid-shuffle, cards arcing through air, hands colliding in high-fives, mezcal pour moments.",
+      "Shallow depth of field: freeze ONE sharp element (card edge, pour stream, glass rim) with surrounding blur.",
+      "Crop tight to amplify momentum. Keep it intimate and close."
+    ],
+    "composition": {
+      "framing_style": [
+        "tight crop",
+        "close proximity",
+        "foreground action with blurred background",
+        "natural clutter allowed"
+      ],
+      "center_of_gravity": [
+        "action occurs within the central 60 percent of frame",
+        "hero subject remains readable even in motion blur",
+        "do not stage like a catalogue product shot"
+      ],
+      "background_behavior": [
+        "busy but not messy",
+        "suggestive environment textures (wood, zinc, bar top)",
+        "no wide empty spaces"
+      ]
+    },
+    "motion_language": {
+      "allowed_motion": [
+        "cards mid-shuffle with blurred edges",
+        "cards arcing through air toward the table",
+        "hands grabbing or spinning a glass",
+        "liquid swirl inside glass",
+        "mid-pour stream (still liquid, not bubbly)"
+      ],
+      "motion_camera_effects": [
+        "1 sharp anchor with surrounding motion blur",
+        "slight hand shake realism",
+        "subtle motion streaks on background hands only"
+      ],
+      "avoid_motion": [
+        "static posed group portrait energy",
+        "perfect symmetry",
+        "clean studio still life"
+      ]
+    }
+  },
+  "locations": {
+    "preferred": [
+      {
+        "id": "bar_counter",
+        "label": "Compact bar counter",
+        "notes": "Tight surfaces, worn textures, intimate spacing."
+      },
+      {
+        "id": "game_table",
+        "label": "Cluttered game table",
+        "notes": "Chips, coasters, matchbooks, normal mess, not staged."
+      },
+      {
+        "id": "loft_table",
+        "label": "Loft table",
+        "notes": "Urban, warm, low-lit, brick hints, wood or zinc surfaces."
+      },
+      {
+        "id": "patio_string_lights",
+        "label": "Outdoor patio with string lights",
+        "notes": "Warm ambience, handheld feel, tighter crop than normal."
+      }
+    ],
+    "avoid": [
+      "vast empty rooms",
+      "flashy venues",
+      "high-end sterile cocktail bars",
+      "studio cyclorama backgrounds"
+    ],
+    "surfaces": [
+      "worn wood",
+      "zinc bar top",
+      "scratched tables",
+      "aged leather booth"
+    ]
+  },
+  "casting": {
+    "age_range": "25-40",
+    "vibe": [
+      "energetic",
+      "real people, not models",
+      "bartenders with quick hands",
+      "authentic faces",
+      "no stiff performers"
+    ],
+    "diversity": [
+      "mixed genders",
+      "varied ethnicities",
+      "city-dwellers and bar crew energy"
+    ],
+    "wardrobe_textures": [
+      "rolled-up sleeves",
+      "tattoos",
+      "denim jackets",
+      "simple vests",
+      "rings and bracelets"
+    ],
+    "framing_preferences": [
+      "hands dominant in frame",
+      "partial faces acceptable",
+      "full faces allowed but not posed"
+    ],
+    "avoid": [
+      "perfect smiles to camera",
+      "fashion editorial posing",
+      "stiff symmetrical lineups"
+    ]
+  },
+  "camera": {
+    "preferred_angles": [
+      {
+        "id": "angle_45",
+        "label": "45-degree table angle",
+        "weight": 0.35,
+        "notes": "Best for showing shuffle, hands, and tabletop momentum."
+      },
+      {
+        "id": "handheld_close",
+        "label": "Handheld close POV",
+        "weight": 0.3,
+        "notes": "Feels real and fast. Great for motion blur."
+      },
+      {
+        "id": "over_shoulder",
+        "label": "Over-the-shoulder",
+        "weight": 0.2,
+        "notes": "Adds presence, keeps scene grounded."
+      },
+      {
+        "id": "top_down",
+        "label": "Top-down flat lay",
+        "weight": 0.1,
+        "notes": "Only if there is obvious motion in hands or cards."
+      },
+      {
+        "id": "macro_crop",
+        "label": "Macro close-crop",
+        "weight": 0.05,
+        "notes": "Use for card edges, pour stream, glass rim, texture."
+      }
+    ],
+    "lens_language": [
+      "shallow depth of field",
+      "focus locked on one sharp element",
+      "natural bokeh",
+      "documentary realism"
+    ],
+    "focus_targets_ranked": [
+      "card edge or face artwork detail",
+      "glass rim and liquid surface",
+      "hand gripping card deck",
+      "pour stream"
+    ],
+    "framing_rules": [
+      "tight crop to amplify momentum",
+      "avoid wide establishing shots",
+      "keep product readable and true scale"
+    ]
+  },
+  "lighting": {
+    "preferred": [
+      {
+        "id": "warm_lamp",
+        "label": "Warm low lamp glow",
+        "weight": 0.35,
+        "notes": "Intimate bar mood, cinematic warmth."
+      },
+      {
+        "id": "candle_bar",
+        "label": "Candle plus bar glow",
+        "weight": 0.3,
+        "notes": "Small highlights, rich shadows, dramatic contrast."
+      },
+      {
+        "id": "mixed_low_light",
+        "label": "Mixed low light",
+        "weight": 0.2,
+        "notes": "Realistic uneven lighting, practical fixtures."
+      },
+      {
+        "id": "golden_hour",
+        "label": "Golden hour",
+        "weight": 0.15,
+        "notes": "Best for outdoor patio action."
+      }
+    ],
+    "avoid": [
+      "harsh direct flash look",
+      "flat sterile overhead office light",
+      "bright studio lighting"
+    ],
+    "shadow_notes": [
+      "soft shadows with textured highlights",
+      "let blur catch light on moving hands"
+    ]
+  },
+  "product_handling": {
+    "scale_locks": [
+      "Playing cards must be true-to-size 2.5 inches by 3.5 inches.",
+      "The card must fit fully inside one adult hand.",
+      "Card height should be roughly similar to the mezcal glass height.",
+      "No oversized cards, no poster-sized props."
+    ],
+    "positioning": [
+      "Product appears inside action, not staged as a hero placard.",
+      "Cards can be partially obscured by hands or glass, but must remain identifiable.",
+      "If using card back plus face card, keep them close and naturally aligned."
+    ],
+    "avoid": [
+      "perfectly upright centered product billboard",
+      "catalogue-style symmetry"
+    ]
+  },
+  "prompt_fragments": {
+    "style_line": "photorealistic, documentary realism, tactile textures, natural grain, shallow depth of field, one sharp anchor with surrounding motion blur",
+    "action_line": "decks mid-shuffle with blurred edges, cards arcing through air, hands moving fast, cropped tight to amplify momentum",
+    "environment_line": "worn tabletop surfaces, subtle clutter like coasters and matchbooks, intimate low-lit bar or game table energy"
+  },
+  "round2_generators": {
+    "scene_moment_templates": [
+      "Hands mid-shuffle as a single card snaps into focus",
+      "A card slides across the table mid-laugh, glasses clink",
+      "Cards arc through warm light, one edge razor sharp",
+      "Quick deal in motion, fingertips blur, card face crisp",
+      "A hand catches a card mid-air, table clutter vibrating",
+      "A glass spins slightly as cards scatter into a new round",
+      "Mid-pour pause, stream sharp, hands moving around it",
+      "High-five collision above the table, cards mid-pass below"
+    ],
+    "props_sets": [
+      ["worn coasters", "matchbook", "lime wedge", "salt dish"],
+      ["bar towel", "bottle cap", "small citrus peel", "coaster stack"],
+      ["clay copita", "lime wedge", "sal de gusano dish", "scattered cards"],
+      ["wooden stirring stick", "coaster", "citrus peel", "small snack bowl"],
+      ["matches", "coaster", "salt dish", "worn napkin", "chips"],
+      ["tiny plate of orange slices", "coaster", "matchbook", "salt dish"]
+    ],
+    "props_notes": [
+      "Keep props small and believable.",
+      "Avoid any prop that introduces readable text like menus or notebooks.",
+      "If a note card appears, it must be blank or blurred beyond readability."
+    ]
+  },
+  "pillar_compatibility_hints": {
+    "discover": {
+      "nudge": "Make the action reveal something subtle about flavour or agave without showing readable writing.",
+      "safe_props_additions": ["agave fibre texture", "citrus peel", "salt dish"]
+    },
+    "play": {
+      "nudge": "Lean into banter and game energy, keep it social and cheeky, motion forward.",
+      "safe_props_additions": ["matchbook", "coasters", "scattered cards"]
+    },
+    "level_up": {
+      "nudge": "Show the action improving choices: card-guided sip or selection moment, still mid-motion.",
+      "safe_props_additions": ["tasting flight tray", "clay copita", "citrus peel"]
+    }
+  },
+  "hard_constraints_locked": [
+    "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
+    "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
+    "no warped hands, no extra fingers",
+    "mezcal bottles must have blank or unbranded labels only",
+    "poured mezcal must be still liquid, never bubbly or fizzy",
+    "no readable text anywhere in the scene except on the reference card itself; all other writing must be blurred or illegible",
+    "mezcal glass must be a small clay copita or small tulip copita, not a tumbler or rocks glass"
+  ],
+  "anti_patterns": {
+    "avoid_phrases": [
+      "perfectly centered product billboard",
+      "studio product photography",
+      "high fashion editorial"
+    ],
+    "avoid_visuals": [
+      "wide static group portraits",
+      "sterile clean tables with no life",
+      "giant oversized cards",
+      "whisky tumbler instead of copita",
+      "readable menus, labels, notes"
+    ]
+  },
+  "scoring_heuristics": {
+    "good_output_signals": [
+      "one sharp anchor element with surrounding blur",
+      "tight crop with hands in motion",
+      "lived-in table textures",
+      "small believable props",
+      "product stays true size"
+    ],
+    "bad_output_signals": [
+      "cards appear oversized",
+      "faces posed like a portrait",
+      "glass is a tumbler",
+      "readable background text appears",
+      "watermark or UI icon appears"
+    ]
+  }
+}

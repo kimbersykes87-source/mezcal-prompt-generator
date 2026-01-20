@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gotham+Condensed:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Colors */
+  --background: #272926; /* Dark Grey - Background colour in all instances */
+  --foreground: #FFFFFF; /* White - Primary text colour */
+  --brand-primary: #7B815C; /* Muted Olive Green - Logo word colour */
+  --brand-accent-1: #A29037; /* Yellow Agave Leaf - Logo mark colour, use sparingly */
+  --brand-accent-2: #B86744; /* Terracotta - Use sparingly */
+  
+  /* Typography */
+  --font-logo: 'Gotham Condensed', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  
+  /* Letter Spacing (converted from design tool units to CSS) */
+  --letter-spacing-logo: 0.077em; /* 77 design units ≈ 0.077em */
+  --letter-spacing-heading: 0.06em; /* 60 design units ≈ 0.06em */
+  --letter-spacing-headline: 0.015em; /* 15 design units ≈ 0.015em */
+  --letter-spacing-body: 0.03em; /* 30 design units ≈ 0.03em */
+}
+
+@layer base {
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing-body);
+    text-transform: lowercase;
+  }
+  
+  /* Logo styling - Always capitalized, Gotham Condensed */
+  .logo {
+    font-family: var(--font-logo);
+    font-weight: 500;
+    letter-spacing: var(--letter-spacing-logo);
+    text-transform: uppercase;
+  }
+  
+  /* Capital Headings, Names, and CTAs - Open Sans, Regular, capitalized */
+  h1, h2, h3, h4, h5, h6,
+  .heading,
+  .cta {
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing-heading);
+    text-transform: uppercase;
+  }
+  
+  /* Headlines - Open Sans, Regular, title case, narrower letter spacing */
+  .headline {
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing-headline);
+    text-transform: capitalize;
+  }
+  
+  /* Body text - Open Sans, Regular, lowercase, narrower letter spacing */
+  p, .body-text {
+    font-family: var(--font-body);
+    font-weight: 400;
+    letter-spacing: var(--letter-spacing-body);
+    text-transform: lowercase;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Brand color utilities */
+  .bg-brand-primary {
+    background-color: var(--brand-primary);
+  }
+  
+  .bg-brand-accent-1 {
+    background-color: var(--brand-accent-1);
+  }
+  
+  .bg-brand-accent-2 {
+    background-color: var(--brand-accent-2);
+  }
+  
+  .text-brand-primary {
+    color: var(--brand-primary);
+  }
+  
+  .text-brand-accent-1 {
+    color: var(--brand-accent-1);
+  }
+  
+  .text-brand-accent-2 {
+    color: var(--brand-accent-2);
+  }
+  
+  /* Form input styling */
+  input[type="radio"]:checked {
+    accent-color: var(--brand-primary);
+  }
+  
+  input[type="file"]::file-selector-button {
+    background-color: var(--brand-primary);
+    color: var(--foreground);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  input[type="file"]::file-selector-button:hover {
+    background-color: var(--brand-accent-1);
+  }
+  
+  textarea, input[type="text"], input[type="file"] {
+    color: var(--foreground);
+  }
+  
+  textarea::placeholder, input::placeholder {
+    color: var(--foreground);
+    opacity: 0.5;
+  }
+}

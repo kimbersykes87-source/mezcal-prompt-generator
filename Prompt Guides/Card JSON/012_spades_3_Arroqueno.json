@@ -1,0 +1,28 @@
+{
+  "id": "012",
+  "original_filename": "012_spades_3.jpg",
+  "new_filename": "012_spades_3_Arroqueno.json",
+  "type": "face_card_species",
+  "suit": "spades",
+  "rank": "3",
+  "colourway": null,
+  "text": {
+    "species_name": "Arroqueño",
+    "tagline": "The Volcanic Knight",
+    "tasting_notes": [
+      "citrus mineral punch"
+    ],
+    "latin_name": "Agave americana var. oaxacensis",
+    "habitat": "Thrives in valleys & villages",
+    "size": "Typically 6 to 10 feet tall",
+    "job_title": null,
+    "action_line": null
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

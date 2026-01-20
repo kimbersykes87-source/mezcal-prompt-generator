@@ -1,0 +1,346 @@
+{
+  "id": "discover",
+  "name": "Discover",
+  "version": "1.0.0",
+  "purpose": "Spark curiosity and teach mezcal diversity through visual intrigue. The viewer should feel like they’ve uncovered something: a species, a texture, a place, a detail. It’s education disguised as beauty.",
+  "primary_emotion": "curiosity",
+  "secondary_emotions": [
+    "wonder",
+    "intrigue",
+    "quiet awe",
+    "collector mindset"
+  ],
+  "what_this_pillar_is": [
+    "Micro-learning through imagery (no lectures, no heavy text).",
+    "Agave diversity as the hero: species, textures, environments, silhouettes.",
+    "A sense of discovery: found objects, wild landscapes, subtle clues."
+  ],
+  "what_this_pillar_is_not": [
+    "Party/game-night social content (that is Play).",
+    "How-to guidance or buying/ordering optimisation (that is Level Up).",
+    "Glossy staged product ads or sterile e-commerce packshots."
+  ],
+  "content_goals": {
+    "brand_goal": "Position the cards as the coolest way to explore mezcal beyond Espadín, visually and intuitively.",
+    "audience_goal": "Make mezcal-curious people feel smart and pulled in without being intimidated.",
+    "content_goal": "Create scroll-stopping images that feel like a hidden door into agave worlds."
+  },
+  "visual_story_rules": {
+    "core_rule": "Every Discover image must contain a ‘hook’ detail that makes you look twice.",
+    "hook_types_ranked": [
+      "shadow silhouette revealing an agave form",
+      "cards interacting with wind / dust / terrain",
+      "agave textures cropped like abstract art",
+      "unexpected material contrast (terracotta, stone, timber)",
+      "subtle sense of place (Oaxaca field edge, rocky hillside)",
+      "a micro ‘clue’ prop (salt dish, citrus peel, fibre strand)"
+    ],
+    "composition_bias": [
+      "fewer elements, more meaning",
+      "visual clarity over chaos",
+      "product as a discovery artefact, not a billboard"
+    ],
+    "tempo": {
+      "pace": "slow",
+      "energy": "quiet",
+      "motion_allowed": [
+        "wind moving dust",
+        "card edge lifting slightly",
+        "light shifting across a shadow",
+        "subtle hand entering frame as context"
+      ]
+    }
+  },
+  "discover_formats": {
+    "from_marketing_plan": [
+      {
+        "id": "agave_shadows",
+        "title": "Agave Shadows",
+        "one_liner": "A single card and a sharp agave shadow that rotates through different species.",
+        "visual_hooks": [
+          "shadow silhouette is the star",
+          "hard light creates crisp agave shape"
+        ],
+        "scene_rules": [
+          "Minimalist set with strong shadow geometry",
+          "Card stays crisp and true scale",
+          "Shadow must clearly read as agave (spiky rosette, spears)"
+        ],
+        "motion_ideas": [
+          "light source moves slightly so shadow shifts position",
+          "glass slides into shot subtly (optional)"
+        ]
+      },
+      {
+        "id": "deck_in_the_wild",
+        "title": "Deck in the Wild",
+        "one_liner": "Cards feel found outdoors: dust, wind, terrain, real environment.",
+        "visual_hooks": [
+          "wind pushes dust across cards",
+          "cards crawling or flipping at the edge",
+          "landscape hints without going wide"
+        ],
+        "scene_rules": [
+          "Outdoor texture dominates (rock, soil, plant matter)",
+          "Cards are slightly imperfectly placed, not staged",
+          "Keep it believable: no floating cards"
+        ],
+        "motion_ideas": [
+          "one corner lifting in wind",
+          "dust sweeping across card surface",
+          "a card half-covered by grit"
+        ]
+      },
+      {
+        "id": "agave_origami",
+        "title": "Agave Origami",
+        "one_liner": "Agave as an object of obsession: sculptural, folded, studied, collected.",
+        "visual_hooks": [
+          "agave paper sculpture / origami vibe",
+          "handwritten notes implied but not readable",
+          "solitary study ritual"
+        ],
+        "scene_rules": [
+          "Craftsmanship feel: timber table, clay wall, warm light",
+          "No readable writing (blur or blank notes only)",
+          "Hands can appear but not faces"
+        ],
+        "motion_ideas": [
+          "hand places down a glass",
+          "paper agave shifts slightly",
+          "cards spread like a solitary win"
+        ]
+      },
+      {
+        "id": "agave_facts",
+        "title": "Agave Facts",
+        "one_liner": "Extreme close crops of agave textures paired with a single card as the key.",
+        "visual_hooks": [
+          "macro texture as abstract art",
+          "one botanical ‘feature’ showcased",
+          "species difference implied visually"
+        ],
+        "scene_rules": [
+          "Macro crop dominates frame",
+          "Card is small and secondary but readable",
+          "No text overlays in-image (facts come from caption later)"
+        ],
+        "motion_ideas": [
+          "none needed, stillness is fine"
+        ]
+      }
+    ],
+    "discover_prompt_patterns": [
+      "single card + strong agave shadow geometry",
+      "cards on raw terrain with wind movement",
+      "macro agave texture with small card clue",
+      "quiet study table with agave object and scattered cards"
+    ]
+  },
+  "product_focus_rules": {
+    "allowed_primary_subjects": [
+      "single face card",
+      "card back (optional pairing)",
+      "deck box (rare, only if it feels discovered, not advertised)"
+    ],
+    "best_fit_for_discover": [
+      "single card",
+      "card + agave shadow",
+      "cards in the wild"
+    ],
+    "avoid_in_discover": [
+      "busy group bar scenes",
+      "high-action shuffles",
+      "full game-night table chaos"
+    ],
+    "scale_locks": [
+      "Playing cards must be true-to-size 2.5 inches by 3.5 inches.",
+      "Cards must fit fully inside one adult hand if held.",
+      "No oversized cards, no warped edges."
+    ]
+  },
+  "environment_palette": {
+    "materials": [
+      "terracotta",
+      "natural stone",
+      "timber",
+      "clay plaster",
+      "raw soil",
+      "agave fibres",
+      "weathered metal accents"
+    ],
+    "colour_bias": [
+      "earth tones",
+      "warm neutrals",
+      "dusty greens",
+      "ash greens",
+      "muted blues",
+      "sun-baked oranges"
+    ],
+    "avoid_colours": [
+      "neon saturation",
+      "high-gloss plastic colour pops",
+      "sterile bright whites"
+    ]
+  },
+  "people_and_framing": {
+    "primary_rule": "Discover should feel observational, not social. Humans are rare and peripheral.",
+    "allowed_people_modes": [
+      "no people",
+      "hands only",
+      "partial figure at edge (blurred)",
+      "jimador hands (context only, no hero humans)"
+    ],
+    "face_rule": {
+      "strict": true,
+      "rule": "No full faces in Discover imagery. If any person appears, crop or blur beyond recognition."
+    },
+    "wardrobe_textures_if_hands_present": [
+      "rolled sleeves",
+      "rings",
+      "dusty work hands",
+      "subtle tattoos (secondary only)"
+    ]
+  },
+  "camera_and_lighting_preferences": {
+    "camera_angles_ranked": [
+      {
+        "id": "macro_crop",
+        "label": "Macro close-crop",
+        "weight": 0.35,
+        "notes": "Perfect for Agave Facts and texture discovery."
+      },
+      {
+        "id": "top_down",
+        "label": "Top-down (minimalist geometry)",
+        "weight": 0.25,
+        "notes": "Strong for Agave Shadows, keeps it clean and graphic."
+      },
+      {
+        "id": "angle_45",
+        "label": "45-degree close angle",
+        "weight": 0.2,
+        "notes": "Best for deck in the wild, terrain depth."
+      },
+      {
+        "id": "handheld_close",
+        "label": "Handheld close POV",
+        "weight": 0.2,
+        "notes": "Adds documentary realism, slight imperfection."
+      }
+    ],
+    "lighting_ranked": [
+      {
+        "id": "diffused_natural",
+        "label": "Diffused natural light",
+        "weight": 0.45,
+        "notes": "Earthy and honest, best default."
+      },
+      {
+        "id": "golden_hour",
+        "label": "Golden hour",
+        "weight": 0.25,
+        "notes": "Adds wonder and place."
+      },
+      {
+        "id": "warm_lamp",
+        "label": "Warm lamp glow",
+        "weight": 0.2,
+        "notes": "Best for study-table or cantina clay wall setups."
+      },
+      {
+        "id": "hard_shadow_light",
+        "label": "Hard directional light for shadows",
+        "weight": 0.1,
+        "notes": "Use ONLY for Agave Shadows concept."
+      }
+    ]
+  },
+  "random_generators": {
+    "scene_moment_templates": [
+      "A single card sits in a sharp agave shadow",
+      "Wind lifts dust across cards on rocky ground",
+      "A card half-buried in soil beside agave fibres",
+      "Agave leaf serrations fill the frame, card as a clue",
+      "Light shifts and the agave silhouette rotates slowly",
+      "Cards lie on stone, one corner lifting in the breeze",
+      "A quiet study table with agave form and scattered cards",
+      "Close crop of rosette core texture with a single card nearby"
+    ],
+    "location_vibes": [
+      "Oaxaca field edge",
+      "rocky hillside",
+      "agave nursery rows",
+      "raw desert-like terrain",
+      "clay-walled cantina corner",
+      "cabin table with timber grain"
+    ],
+    "props_sets": [
+      ["terracotta surface", "hard shadow edge", "fine dust", "single copita (optional)"],
+      ["small stones", "dry soil", "agave fibres", "wind-blown grit"],
+      ["weathered timber", "matchbook", "salt dish", "citrus peel"],
+      ["red earth", "agave spears", "rock gravel", "leaf litter"],
+      ["woven coaster", "clay copita", "salt dish", "fibrous strands"]
+    ],
+    "hook_details": [
+      "crisp agave silhouette shadow",
+      "dust and grit catching light",
+      "leaf serrations razor sharp",
+      "green-to-ash colour gradient",
+      "one card corner lifted by wind",
+      "agave fibres peeling like threads"
+    ]
+  },
+  "caption_support_notes": {
+    "caption_does_the_teaching": true,
+    "caption_guidance": [
+      "Keep the image clean. The caption can add the fact.",
+      "If you want a ‘fact’ angle, do it with text in the caption, not in the image."
+    ]
+  },
+  "hard_constraints_locked": [
+    "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
+    "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
+    "no warped hands, no extra fingers",
+    "mezcal bottles must have blank or unbranded labels only",
+    "poured mezcal must be still liquid, never bubbly or fizzy",
+    "no readable text anywhere in the scene except on the reference card itself; all other writing must be blurred or illegible",
+    "playing cards must be true-to-size 2.5 inches by 3.5 inches, fit fully in one adult hand if held, never oversized",
+    "Discover framing rule: no full faces ever, people minimal or none",
+    "If mezcal appears, use a small clay copita or tulip copita, not a tumbler"
+  ],
+  "anti_patterns": {
+    "avoid_phrases": [
+      "game night",
+      "party vibe",
+      "high energy shuffle",
+      "influencer portrait",
+      "catalogue product photo"
+    ],
+    "avoid_visuals": [
+      "crowded social bar table scenes",
+      "full faces clearly visible",
+      "oversized product hero billboard",
+      "sterile studio packshot look",
+      "readable menus, labels, notebooks",
+      "neon oversaturated grading"
+    ]
+  },
+  "scoring_heuristics": {
+    "good_output_signals": [
+      "image makes you zoom in to understand what you’re seeing",
+      "agave textures feel tactile and real",
+      "composition feels like an artefact was discovered",
+      "minimal props, strong material contrast",
+      "quiet mood, curiosity hook present"
+    ],
+    "bad_output_signals": [
+      "feels like an ad",
+      "too social or chaotic",
+      "faces dominate",
+      "no clear discovery hook",
+      "props feel staged or too clean",
+      "background includes readable text"
+    ]
+  }
+}

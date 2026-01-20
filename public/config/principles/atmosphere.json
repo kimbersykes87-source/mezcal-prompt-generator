@@ -1,0 +1,344 @@
+{
+  "id": "atmosphere",
+  "name": "Atmosphere",
+  "version": "1.0.0",
+  "purpose": "Warm, intimate, lived-in documentary scenes where the product sits naturally in real social flow. Tight crops, subtle clutter, low light glow. Never staged or polished.",
+  "priority": 1,
+  "mood_keywords": [
+    "intimate",
+    "warm",
+    "lived-in",
+    "casual flow",
+    "low-lit",
+    "golden",
+    "textured",
+    "human"
+  ],
+  "core_rules": {
+    "hero_focus": [
+      "Frame the product dead-centre inside casual flow: cards fanned mid-debate, decks mid-pass over tasting glasses.",
+      "Keep composition tight and lived-in, with slight believable clutter (coasters, matchbooks, notepads) but never pristine staging.",
+      "Cropping should highlight intimacy and proximity, not wide environment shots."
+    ],
+    "composition": {
+      "framing_style": [
+        "tight crop",
+        "close to table surface",
+        "product centered but not billboard-staged",
+        "foreground intimacy, background context soft"
+      ],
+      "center_of_gravity": [
+        "product sits within the central 50 to 60 percent of the frame",
+        "hands and props naturally encroach into the frame edges",
+        "avoid catalogue symmetry and perfectly aligned placement"
+      ],
+      "background_behavior": [
+        "subtle background glow from lamps",
+        "soft blur on faces and background activity",
+        "textured walls and worn furniture cues"
+      ]
+    },
+    "social_language": {
+      "allowed_moments": [
+        "cards fanned mid-debate",
+        "deck mid-pass between hands",
+        "a card slid across a scarred table",
+        "glasses nudged together mid-laugh",
+        "hand reaching for sal de gusano or citrus",
+        "quiet table moment with relaxed chatter"
+      ],
+      "avoid_moments": [
+        "posed portrait vibe",
+        "clean product showcase with no humans",
+        "wide staged group photo energy"
+      ]
+    }
+  },
+  "locations": {
+    "preferred": [
+      {
+        "id": "urban_loft",
+        "label": "Urban loft with exposed brick",
+        "notes": "Warm low light, textured interiors, real table clusters."
+      },
+      {
+        "id": "neighborhood_bar",
+        "label": "Low-lit neighbourhood bar",
+        "notes": "Practical lamps, lived-in surfaces, casual crowd."
+      },
+      {
+        "id": "backyard_patio",
+        "label": "Backyard patio",
+        "notes": "String lights, tight table clusters, relaxed night energy."
+      },
+      {
+        "id": "cabin_table",
+        "label": "Cabin table",
+        "notes": "Rustic wood, warm lamp glow, intimate group huddle."
+      },
+      {
+        "id": "oaxaca_cantina",
+        "label": "Oaxaca-style cantina with clay walls",
+        "notes": "Earthy textures, warm practical light, relatable grit."
+      }
+    ],
+    "avoid": [
+      "flashy venues",
+      "nightclub bottle service vibes",
+      "sterile bright studios",
+      "wide empty rooms"
+    ],
+    "surfaces": [
+      "scarred wood table",
+      "worn timber",
+      "aged leather booth",
+      "clay walls",
+      "textured plaster"
+    ]
+  },
+  "casting": {
+    "age_range": "25-40",
+    "vibe": [
+      "real people, not models",
+      "city-dwellers and tattooed bartenders",
+      "lived-in faces (but never full-face portraits)",
+      "genuine expressions and candid energy"
+    ],
+    "diversity": [
+      "mix of genders",
+      "varied ethnicities reflecting mezcal fans",
+      "casual friend-group chemistry"
+    ],
+    "wardrobe_textures": [
+      "tattoos",
+      "simple vests",
+      "rolled-up sleeves",
+      "denim jackets",
+      "rings",
+      "bracelets",
+      "worn tees"
+    ],
+    "face_visibility_rule": {
+      "strict": true,
+      "rule": "No full faces ever. Only hands, partial faces, side profiles, faces turned away, or faces blurred/obscured by depth of field.",
+      "allowed_face_treatments": [
+        "cropped at eyes",
+        "cropped at mouth",
+        "side profile only",
+        "turned away from camera",
+        "blurred beyond recognition",
+        "blocked by foreground hands or cards"
+      ]
+    },
+    "framing_preferences": [
+      "hands dominant in frame",
+      "partial faces allowed only if cropped or blurred",
+      "group shots allowed only if faces are not fully visible"
+    ],
+    "avoid": [
+      "posed smiles to camera",
+      "full face portraits",
+      "clean influencer-style staging"
+    ]
+  },
+  "camera": {
+    "preferred_angles": [
+      {
+        "id": "over_shoulder",
+        "label": "Over-the-shoulder",
+        "weight": 0.3,
+        "notes": "Feels intimate and candid, faces naturally cropped/blurred."
+      },
+      {
+        "id": "handheld_close",
+        "label": "Handheld close POV",
+        "weight": 0.3,
+        "notes": "Table-level intimacy, natural movement, lived-in."
+      },
+      {
+        "id": "angle_45",
+        "label": "45-degree table angle",
+        "weight": 0.25,
+        "notes": "Perfect for cards + glass + hands without portraits."
+      },
+      {
+        "id": "top_down",
+        "label": "Top-down flat lay",
+        "weight": 0.1,
+        "notes": "Only if it still feels messy and real, not staged."
+      },
+      {
+        "id": "macro_crop",
+        "label": "Macro close-crop",
+        "weight": 0.05,
+        "notes": "Great for card texture, glass rim, salt grains."
+      }
+    ],
+    "lens_language": [
+      "shallow depth of field",
+      "soft falloff to background",
+      "natural bokeh from lamps",
+      "documentary realism grain"
+    ],
+    "focus_targets_ranked": [
+      "face card artwork and print detail",
+      "card edge texture",
+      "glass rim and liquid surface",
+      "hands touching cards",
+      "salt / citrus texture"
+    ],
+    "framing_rules": [
+      "tight crop for intimacy",
+      "no full faces (enforced)",
+      "avoid wide establishing shots",
+      "product centred but never billboard-sized"
+    ]
+  },
+  "lighting": {
+    "preferred": [
+      {
+        "id": "warm_lamp",
+        "label": "Warm low lamp glow",
+        "weight": 0.4,
+        "notes": "Signature Atmosphere look, intimate amber warmth."
+      },
+      {
+        "id": "golden_hour",
+        "label": "Golden hour low light",
+        "weight": 0.25,
+        "notes": "Soft warm edges, long shadows, natural intimacy."
+      },
+      {
+        "id": "candle_glow",
+        "label": "Candle glow",
+        "weight": 0.2,
+        "notes": "Small highlights, soft shadows, cosy mood."
+      },
+      {
+        "id": "bar_practicals",
+        "label": "Bar practical light mix",
+        "weight": 0.15,
+        "notes": "Uneven real-world light, table lamps, warm fixtures."
+      }
+    ],
+    "avoid": [
+      "harsh direct flash",
+      "flat office lighting",
+      "bright studio softbox look"
+    ],
+    "shadow_notes": [
+      "soft shadows with warm highlights",
+      "subtle glow on glass edges",
+      "texture visible on wood and clay"
+    ]
+  },
+  "product_handling": {
+    "scale_locks": [
+      "Playing cards must be true-to-size 2.5 inches by 3.5 inches.",
+      "The card must fit fully inside one adult hand.",
+      "Card height should be roughly similar to the mezcal glass height.",
+      "No oversized cards, no poster-sized props."
+    ],
+    "positioning": [
+      "Product is dead-centre but sits inside the moment, not staged as a billboard.",
+      "Cards should feel handled: slightly imperfect alignment, minor overlaps, natural angles.",
+      "If using card back plus face card, keep them paired naturally, not perfectly symmetrical."
+    ],
+    "avoid": [
+      "perfect upright centered product placard",
+      "sterile catalogue symmetry",
+      "too-clean table with no life"
+    ]
+  },
+  "prompt_fragments": {
+    "style_line": "photorealistic, documentary realism, warm intimate atmosphere, tactile textures, natural grain, shallow depth of field, soft lamp bokeh",
+    "atmosphere_line": "product centered in casual flow, cards fanned mid-debate, deck mid-pass over tasting glass, tight crop for intimacy",
+    "environment_line": "scarred wood table, slight clutter like coasters and matchbooks, low-lit bar or cantina glow, no pristine staging",
+    "wardrobe_line": "tattoos, rolled-up sleeves, simple vests, rings, bracelets, worn denim, casual bar crew vibe",
+    "face_rule_line": "no full faces: hands dominant, partial faces only if cropped or blurred"
+  },
+  "round2_generators": {
+    "scene_moment_templates": [
+      "Hands fan the cards mid-debate, glass nudged closer",
+      "A deck passes between tattooed hands under warm lamp glow",
+      "A card slides across the worn table, laughter blurred behind",
+      "Two hands compare cards, citrus and salt within reach",
+      "Cards hover mid-pass above a copita, table clutter alive",
+      "A hand taps a card beside the glass, friends leaning in",
+      "Cards spread casually, one finger points at the artwork",
+      "A card is revealed mid-conversation, soft glow and shadows"
+    ],
+    "props_sets": [
+      ["worn coasters", "matchbook", "lime wedge", "salt dish"],
+      ["clay copita", "citrus peel", "sal de gusano dish", "worn napkin"],
+      ["small snack bowl", "coaster stack", "matches", "lime wedge"],
+      ["woven coaster", "salt dish", "citrus peel", "scattered cards"],
+      ["matchbook", "bottle cap", "worn coaster", "small clay cup"],
+      ["worn notepad (blank/illegible)", "coaster", "lime wedge", "salt dish"]
+    ],
+    "props_notes": [
+      "Keep props small and believable.",
+      "Avoid any prop that introduces readable text (menus, labels, clear handwriting).",
+      "If a notepad appears, it must be blank or blurred beyond readability."
+    ]
+  },
+  "pillar_compatibility_hints": {
+    "discover": {
+      "nudge": "Curiosity and education through subtle objects and agave cues, no readable notes.",
+      "safe_props_additions": ["agave fibre texture", "citrus peel", "salt dish"]
+    },
+    "play": {
+      "nudge": "Cheeky social banter and table energy, cards as the spark for conversation.",
+      "safe_props_additions": ["matchbook", "coasters", "scattered cards"]
+    },
+    "level_up": {
+      "nudge": "Show the cards guiding better sipping choices in a real moment.",
+      "safe_props_additions": ["tasting flight tray", "clay copita", "citrus peel"]
+    }
+  },
+  "hard_constraints_locked": [
+    "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
+    "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
+    "no warped hands, no extra fingers",
+    "mezcal bottles must have blank or unbranded labels only",
+    "poured mezcal must be still liquid, never bubbly or fizzy",
+    "no readable text anywhere in the scene except on the reference card itself; all other writing must be blurred or illegible",
+    "playing cards must be true-to-size 2.5 inches by 3.5 inches, fit fully in one adult hand, never oversized",
+    "mezcal glass must be a small clay copita or small tulip copita, not a tumbler or rocks glass",
+    "atmosphere rule: no full faces ever, only hands or partial/blurred/turned away faces"
+  ],
+  "anti_patterns": {
+    "avoid_phrases": [
+      "portrait photography",
+      "influencer posing",
+      "catalogue product shot",
+      "perfectly aligned hero placard"
+    ],
+    "avoid_visuals": [
+      "full faces clearly visible",
+      "wide staged group photos",
+      "sterile clean table with no life",
+      "giant oversized cards",
+      "whisky tumbler instead of copita",
+      "readable menus, labels, notes",
+      "watermark or UI icon"
+    ]
+  },
+  "scoring_heuristics": {
+    "good_output_signals": [
+      "tight crop with hands and product in frame",
+      "warm lamp bokeh and soft shadows",
+      "believable clutter and table texture",
+      "faces not fully visible (cropped or blurred)",
+      "product true scale and integrated naturally"
+    ],
+    "bad_output_signals": [
+      "full face portrait appears",
+      "product looks billboard-staged",
+      "cards appear oversized",
+      "glass is a tumbler",
+      "readable background text appears",
+      "watermark or UI icon appears"
+    ]
+  }
+}

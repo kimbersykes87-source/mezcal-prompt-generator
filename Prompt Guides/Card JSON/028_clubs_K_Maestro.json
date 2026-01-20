@@ -1,0 +1,26 @@
+{
+  "id": "028",
+  "original_filename": "028_clubs_K.jpg",
+  "new_filename": "028_clubs_K_Maestro.json",
+  "type": "court_card",
+  "suit": "clubs",
+  "rank": "K",
+  "colourway": "black",
+  "text": {
+    "species_name": null,
+    "tagline": null,
+    "tasting_notes": [],
+    "latin_name": null,
+    "habitat": null,
+    "size": null,
+    "job_title": "Maestro",
+    "action_line": "Grinding the fibers"
+  },
+  "hard_constraints": {
+    "blank_mezcal_labels_required": true,
+    "no_bubbly_mezcal": true,
+    "playing_card_size_standard_inches": "2.5x3.5",
+    "no_ui_icons": true,
+    "no_watermarks": true
+  }
+}

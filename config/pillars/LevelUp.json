@@ -1,0 +1,429 @@
+{
+  "id": "level_up",
+  "name": "Level Up",
+  "version": "1.0.0",
+  "purpose": "Turn curiosity into confidence. This pillar shows the cards actively helping someone make a better mezcal choice: what to order, what to taste next, how to compare, and how to build a simple ritual around the deck.",
+  "primary_emotion": "confidence",
+  "secondary_emotions": [
+    "clarity",
+    "curiosity",
+    "control",
+    "satisfaction",
+    "quiet excitement"
+  ],
+  "what_this_pillar_is": [
+    "Cards used as a guide: choosing the next sip, comparing tasting notes, ordering smarter.",
+    "Small rituals: tasting flights, one-card prompts, ‘pick a card then pour’ flow.",
+    "Progression: from ‘I don’t know mezcal’ to ‘I’ve got this’ in one moment.",
+    "Practical but still sexy: warm, tactile, real-world settings, not classroom vibes."
+  ],
+  "what_this_pillar_is_not": [
+    "Rowdy game-night chaos (that is Play).",
+    "Plant-only agave texture study (that is Discover).",
+    "Corporate training, diagrams, overlays, or heavy instructional text."
+  ],
+  "content_goals": {
+    "brand_goal": "Make the deck feel like the easiest way to learn mezcal without being lectured.",
+    "audience_goal": "Give people a ‘I can do this’ moment that makes them want the cards.",
+    "content_goal": "Create save-worthy posts that feel useful and premium."
+  },
+  "visual_story_rules": {
+    "core_rule": "Every Level Up image must show the cards improving the mezcal decision in the scene.",
+    "hook_types_ranked": [
+      "card placed beside a glass right before a sip",
+      "tasting flight arranged with cards as labels",
+      "hand holding a card while scanning a menu (menu text must be blurred/illegible)",
+      "simple product pairing: deck box + one face card (minimal, not sterile)",
+      "card guiding an order at a bar table"
+    ],
+    "composition_bias": [
+      "cleaner than Play, but still lived-in and tactile",
+      "intentional placement of the card(s)",
+      "tight framing, no wide empty rooms"
+    ],
+    "tempo": {
+      "pace": "medium",
+      "energy": "focused",
+      "motion_required": false,
+      "micro_motion_allowed": [
+        "hand reaching for copita",
+        "card sliding into place",
+        "a sip starting"
+      ]
+    }
+  },
+  "level_up_formats": {
+    "from_marketing_plan": [
+      {
+        "id": "unlock_new_tastes_with_a_card",
+        "title": "Unlock New Tastes With a Card",
+        "one_liner": "Card thrown/placed next to the glass, prompting a new sip or comparison.",
+        "visual_hooks": [
+          "glass rim sharp, card face sharp, warm light",
+          "moment feels like a mini ritual",
+          "card clearly visible and true scale"
+        ],
+        "scene_rules": [
+          "Card must feel like it caused the next action (sip, choose, compare)",
+          "Keep it intimate, bar-table close framing",
+          "Avoid full portrait faces"
+        ],
+        "best_camera": ["45-degree close", "handheld close", "macro close-crop"],
+        "best_light": ["warm lamp glow", "golden hour", "candle glow"]
+      },
+      {
+        "id": "tasting_flights_with_cards",
+        "title": "Tasting Flights With Cards",
+        "one_liner": "Cards thrown/placed near each copita to guide tasting order and notes.",
+        "visual_hooks": [
+          "2–4 copitas max, each paired with a card",
+          "worn timber table, salt/citrus details",
+          "clean but real"
+        ],
+        "scene_rules": [
+          "No readable written notes, no readable labels",
+          "Cards must remain the visual organiser, not random clutter",
+          "Keep hands in-frame occasionally, but not required"
+        ],
+        "best_camera": ["top-down", "45-degree close"],
+        "best_light": ["warm lamp glow", "diffused natural light"]
+      },
+      {
+        "id": "simple_product_shots",
+        "title": "Simple Product Shots",
+        "one_liner": "Deck box plus one face card reveal, minimal but textured.",
+        "visual_hooks": [
+          "packaging + single card, angled for depth",
+          "textured surface (terracotta, worn wood, clay wall)",
+          "no studio white backgrounds"
+        ],
+        "scene_rules": [
+          "Keep it minimal, not sterile",
+          "No heavy props, 0–2 small props max",
+          "Card scale must be perfect and undistorted"
+        ],
+        "best_camera": ["45-degree", "macro close-crop"],
+        "best_light": ["diffused natural light", "golden hour", "warm lamp glow"]
+      },
+      {
+        "id": "unlock_new_sips",
+        "title": "Unlock New Sips",
+        "one_liner": "Cards guide menu ordering or bottle choice in a real bar.",
+        "visual_hooks": [
+          "hand holding a card against bar background",
+          "menu present but blurred/illegible",
+          "decision moment: ‘this one next’"
+        ],
+        "critical_constraints": [
+          "No readable menu text",
+          "No branded bottle labels",
+          "Keep focus on card and hand"
+        ],
+        "scene_rules": [
+          "Over-shoulder POV works best",
+          "Faces should be partial or background blur",
+          "Bar setting must feel real and textured"
+        ],
+        "best_camera": ["over-shoulder", "handheld close"],
+        "best_light": ["warm lamp glow", "mixed low light"]
+      }
+    ],
+    "level_up_prompt_patterns": [
+      "a face card placed beside a copita right before a sip",
+      "two copitas and two cards for a quick comparison",
+      "hand holds a card while choosing what to order",
+      "deck box and one card on terracotta texture",
+      "card guides a tasting flight in a cosy bar"
+    ]
+  },
+  "product_focus_rules": {
+    "allowed_primary_subjects": [
+      "single card + mezcal glass",
+      "card(s) + tasting flight",
+      "hand holding a card (ordering moment)",
+      "deck box + single card (minimal)"
+    ],
+    "best_fit_for_level_up": [
+      "card + mezcal glass",
+      "hand holding a card",
+      "tasting flight with cards"
+    ],
+    "avoid_in_level_up": [
+      "chaotic table spreads with lots of cards",
+      "cards flying mid-shuffle (that is Action/Play)",
+      "plant-only agave macro textures (that is Discover)"
+    ],
+    "scale_locks": [
+      "Playing cards must be true-to-size 2.5 inches by 3.5 inches.",
+      "Cards must fit naturally in one adult hand.",
+      "No warping, bending, stretched edges, or oversized cards."
+    ]
+  },
+  "people_and_framing": {
+    "primary_rule": "Human presence is helpful, but the image is about the decision moment, not faces.",
+    "allowed_people_modes_ranked": [
+      {
+        "id": "hands_only",
+        "label": "Hands only",
+        "weight": 0.45,
+        "notes": "Best for ordering and tasting guidance moments."
+      },
+      {
+        "id": "partial_faces",
+        "label": "Partial faces",
+        "weight": 0.35,
+        "notes": "Candid context only, cropped, shallow DOF blur."
+      },
+      {
+        "id": "no_people",
+        "label": "No people",
+        "weight": 0.2,
+        "notes": "Allowed for simple product shots and tasting setups."
+      }
+    ],
+    "face_policy": {
+      "strict": true,
+      "rule": "Avoid full portrait faces. If faces appear, keep them partial or background blurred."
+    },
+    "casting_notes": [
+      "Diverse 25–40",
+      "real people, no model posing",
+      "bartenders, city-dwellers, relaxed charisma",
+      "tattoos, rolled sleeves, rings are welcome texture"
+    ]
+  },
+  "locations": {
+    "preferred": [
+      {
+        "id": "oaxaca_style_cantina",
+        "label": "Oaxaca-style cantina",
+        "notes": "Clay walls, warm lamps, worn timber tables."
+      },
+      {
+        "id": "low_lit_bar",
+        "label": "Low-lit neighbourhood bar",
+        "notes": "Cosy, textured, real life."
+      },
+      {
+        "id": "cabin_table",
+        "label": "Cabin table",
+        "notes": "Warm timber, quiet ritual vibe."
+      },
+      {
+        "id": "urban_loft",
+        "label": "Urban loft table",
+        "notes": "Exposed brick, intimate setting."
+      },
+      {
+        "id": "patio",
+        "label": "Backyard patio",
+        "notes": "String lights, relaxed tasting moment."
+      }
+    ],
+    "avoid": [
+      "sterile modern kitchen counters",
+      "white seamless studio setups",
+      "flashy venues and neon club lighting",
+      "wide empty spaces with no texture"
+    ],
+    "surface_textures": [
+      "scarred wood",
+      "worn timber",
+      "terracotta plaster",
+      "clay walls",
+      "coaster ring marks"
+    ]
+  },
+  "props": {
+    "allowed": [
+      "copita glass",
+      "small tasting glass",
+      "lime wedge",
+      "sal de gusano",
+      "worn coasters",
+      "matchbook",
+      "small bowl",
+      "bar spoon (subtle)"
+    ],
+    "rules": [
+      "Use 2–5 small props max. Keep it tidy but real.",
+      "No readable notes, no readable recipes, no readable menus.",
+      "Props should support the ‘guided tasting’ story, not distract."
+    ],
+    "mezcal_specific_constraints": [
+      "Any mezcal bottles must have blank/unbranded labels only.",
+      "Poured mezcal must be still liquid, never bubbly or fizzy."
+    ]
+  },
+  "camera_and_lighting_preferences": {
+    "camera_angles_ranked": [
+      {
+        "id": "angle_45",
+        "label": "45-degree",
+        "weight": 0.3,
+        "notes": "Best balance of product clarity and atmosphere."
+      },
+      {
+        "id": "over_shoulder",
+        "label": "Over-shoulder",
+        "weight": 0.25,
+        "notes": "Perfect for ordering moments, card in hand, bar beyond."
+      },
+      {
+        "id": "macro_crop",
+        "label": "Macro close-crop",
+        "weight": 0.2,
+        "notes": "Great for card + rim detail, tactile textures."
+      },
+      {
+        "id": "handheld_close",
+        "label": "Handheld close",
+        "weight": 0.15,
+        "notes": "Adds realism, keep motion low."
+      },
+      {
+        "id": "top_down",
+        "label": "Top-down",
+        "weight": 0.1,
+        "notes": "Use mainly for tasting flights and organised layouts."
+      }
+    ],
+    "lighting_ranked": [
+      {
+        "id": "warm_lamp",
+        "label": "Warm lamp glow",
+        "weight": 0.35,
+        "notes": "Cosy, intimate, bar ritual."
+      },
+      {
+        "id": "diffused_natural",
+        "label": "Diffused natural light",
+        "weight": 0.25,
+        "notes": "Best for simple product shots without feeling sterile."
+      },
+      {
+        "id": "golden_hour",
+        "label": "Golden hour",
+        "weight": 0.25,
+        "notes": "Premium warmth with texture and depth."
+      },
+      {
+        "id": "candle_glow",
+        "label": "Candle glow",
+        "weight": 0.15,
+        "notes": "Moody and tactile, keep details readable."
+      }
+    ],
+    "clarity_rule": "Cards must remain crisp and readable even in low light. Use shallow DOF carefully so the card face stays sharp."
+  },
+  "ritual_cues": {
+    "must_include_one": [
+      "card placed to prompt the next sip",
+      "a tasting flight organised by cards",
+      "hand selecting a card before ordering",
+      "card beside glass mid-comparison"
+    ],
+    "avoid": [
+      "random cards with no purpose",
+      "too many cards creating chaos",
+      "generic ‘product display’ with no decision moment"
+    ]
+  },
+  "platform_guidance": {
+    "best_for_ig_story_or_reel": [
+      "card placed beside glass then sip begins",
+      "hand holding card while ordering moment",
+      "quick tasting flight set-up"
+    ],
+    "best_for_carousel": [
+      "step-by-step tasting flight visuals (without text overlays)",
+      "product reveal + one use-case scene",
+      "ordering guide moments across 3–5 frames"
+    ]
+  },
+  "random_generators": {
+    "scene_moment_templates": [
+      "A card lands beside the copita, and the sip begins",
+      "Two copitas and two cards set up a quick comparison",
+      "A hand holds a card while choosing what to order next",
+      "Cards guide a small tasting flight on a worn table",
+      "A card slides into place as someone commits to a new pour",
+      "A deck box sits nearby as one card leads the ritual",
+      "A card and glass align perfectly before a first taste",
+      "A bar ordering moment: card in hand, menu blurred behind"
+    ],
+    "location_vibes": [
+      "Oaxaca-style cantina with clay walls and warm lamps",
+      "low-lit neighbourhood bar with worn timber tables",
+      "cabin table with cosy wood grain",
+      "urban loft table with exposed brick",
+      "backyard patio under string lights"
+    ],
+    "props_sets": [
+      ["copita glass", "lime wedge", "sal de gusano", "worn coaster"],
+      ["two copitas", "small bowl", "citrus peel", "matchbook"],
+      ["copita", "ring-stained coaster", "crumpled napkin", "bar spoon (subtle)"],
+      ["blank-label mezcal bottle (background)", "copita", "lime wedge", "coaster"]
+    ],
+    "hook_details": [
+      "card face and glass rim both tack sharp",
+      "warm texture on timber table and clay walls",
+      "a deliberate ‘choice moment’ feel",
+      "hands add realism without becoming portraits",
+      "minimal clutter, maximum tactile vibe"
+    ]
+  },
+  "story_intent_rules": {
+    "allowed": true,
+    "max_sentences": 2,
+    "guidance": [
+      "Keep it about confidence and decision-making, not the brand.",
+      "Never include labels like 'Pillar: Level Up' in the output prompt.",
+      "Make it feel like a ritual, not a lesson."
+    ]
+  },
+  "hard_constraints_locked": [
+    "no text overlays, no captions, no watermarks, no logos, no UI icons, no corner marks, no sparkles",
+    "no pristine studio staging, no glossy product-ad perfection, no sterile white backgrounds",
+    "no warped hands, no extra fingers",
+    "mezcal bottles must have blank or unbranded labels only",
+    "poured mezcal must be still liquid, never bubbly or fizzy",
+    "no readable text anywhere in the scene except on the reference card itself; all other writing must be blurred or illegible",
+    "playing cards must be true-to-size 2.5 inches by 3.5 inches, fit fully in one adult hand, never oversized"
+  ],
+  "anti_patterns": {
+    "avoid_phrases": [
+      "instructional infographic",
+      "educational diagram",
+      "menu readable",
+      "text labels",
+      "studio packshot on white"
+    ],
+    "avoid_visuals": [
+      "faces as hero subject",
+      "excessive cards scattered randomly",
+      "branded bottle labels",
+      "bubbly/fizzy liquid",
+      "clean sterile surfaces with no texture",
+      "readable menus, receipts, notebooks"
+    ]
+  },
+  "scoring_heuristics": {
+    "good_output_signals": [
+      "the card clearly guides the next sip or order",
+      "scene feels like a small ritual",
+      "cards are true scale and readable",
+      "lighting is warm and tactile",
+      "props are minimal and purposeful"
+    ],
+    "bad_output_signals": [
+      "feels like a posed advert",
+      "cards are oversized or distorted",
+      "menu text is readable",
+      "too many props or cards clutter the scene",
+      "faces become the main subject",
+      "bottle labels look branded",
+      "liquid looks fizzy"
+    ]
+  }
+}
