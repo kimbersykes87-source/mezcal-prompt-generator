@@ -82,7 +82,7 @@ export default function Round1SelectorV2({ principle, pillar, onSelectionChange 
   }
   lightingOptions.sort((a, b) => (b.weight || 0) - (a.weight || 0));
 
-  const productOptions = pillar.product_focus_rules.allowed_primary_subjects || [];
+  const productOptions = pillar.product_focus_rules?.allowed_primary_subjects || [];
 
   return (
     <div className="space-y-6">

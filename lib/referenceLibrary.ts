@@ -3,20 +3,20 @@ import type { CardReference } from '@/types';
 // Card reference library - loads from static JSON files
 let cardLibraryCache: Map<string, CardReference> | null = null;
 
-// All card IDs in the library
+// All card IDs in the library (match the actual filenames in /public/card-data)
 const CARD_IDS = [
-  '001_spades_A', '002_spades_K', '003_spades_Q', '004_spades_J',
-  '005_spades_10', '006_spades_9', '007_spades_8', '008_spades_7',
-  '009_spades_6', '010_spades_5', '011_spades_4', '012_spades_3', '013_spades_2',
-  '014_hearts_A', '015_hearts_K', '016_hearts_Q', '017_hearts_J',
-  '018_hearts_10', '019_hearts_9', '020_hearts_8', '021_hearts_7',
-  '022_hearts_6', '023_hearts_5', '024_hearts_4', '025_hearts_3', '026_hearts_2',
-  '027_clubs_A', '028_clubs_K', '029_clubs_Q', '030_clubs_J',
-  '031_clubs_10', '032_clubs_9', '033_clubs_8', '034_clubs_7',
-  '035_clubs_6', '036_clubs_5', '037_clubs_4', '038_clubs_3', '039_clubs_2',
-  '040_diamonds_A', '041_diamonds_K', '042_diamonds_Q', '043_diamonds_J',
-  '044_diamonds_10', '045_diamonds_9', '046_diamonds_8', '047_diamonds_7',
-  '048_diamonds_6', '049_diamonds_5', '050_diamonds_4', '051_diamonds_3', '052_diamonds_2',
+  '001_spades_A_Pulquero', '002_spades_K_Maestro', '003_spades_Q_Maestra', '004_spades_J_Jimedor',
+  '005_spades_10_Salmiana', '006_spades_9_Alto', '007_spades_8_Papalote', '008_spades_7_Masparillo',
+  '009_spades_6_Mexicano', '010_spades_5_Coyote', '011_spades_4_Sierra-Negra', '012_spades_3_Arroqueno', '013_spades_2_Mountain-Agave',
+  '014_hearts_A_Castilla', '015_hearts_K_Maestro', '016_hearts_Q_Maestra', '017_hearts_J_Jimedor',
+  '018_hearts_10_Lumbre', '019_hearts_9_Tobaziche', '020_hearts_8_Bicuixe', '021_hearts_7_Madrecuixe',
+  '022_hearts_6_Barril', '023_hearts_5_Cuishe', '024_hearts_4_Tepeztate', '025_hearts_3_Tobala', '026_hearts_2_Espadin',
+  '027_clubs_A_Pulque-Chino', '028_clubs_K_Maestro', '029_clubs_Q_Maestra', '030_clubs_J_Jimedor',
+  '031_clubs_10_Cinceganero', '032_clubs_9_Espadita', '033_clubs_8_Chahuiqui', '034_clubs_7_Tepemete',
+  '035_clubs_6_Lamparillo', '036_clubs_5_Jabalí', '037_clubs_4_Wocomahi', '038_clubs_3_Pacifica', '039_clubs_2_Henequen',
+  '040_diamonds_A_Chuparrosa', '041_diamonds_K_Maestro', '042_diamonds_Q_Maestra', '043_diamonds_J_Jimedor',
+  '044_diamonds_10_Rayo', '045_diamonds_9_Warash', '046_diamonds_8_Maguey_Verde', '047_diamonds_7_Blue_Weber',
+  '048_diamonds_6_Lechuguilla_Ceniza', '049_diamonds_5_Lechuguilla_de_la_Sierra', '050_diamonds_4_Chato_de_Sahuayo', '051_diamonds_3_Cenizo_Durangensis', '052_diamonds_2_Cimarron',
   '053_joker_black', '054_joker_red', '057_card-back'
 ] as const;
 
@@ -26,7 +26,6 @@ export async function loadCardReference(cardId: string): Promise<CardReference |
   }
 
   try {
-    // Find the filename - need to get the full filename from the directory
     const response = await fetch(`/card-data/${cardId}.json`);
     if (!response.ok) {
       console.warn(`Card ${cardId} not found`);
@@ -34,15 +33,10 @@ export async function loadCardReference(cardId: string): Promise<CardReference |
     }
     const data = await response.json();
     
-    // Construct paths
-    const speciesName = data.text?.species_name || data.text?.tagline || cardId;
-    const cleanSpeciesName = speciesName.replace(/[^a-zA-Z0-9-]/g, '-');
-    const filename = `${cardId}_${cleanSpeciesName}`;
-    
     const cardRef: CardReference = {
-      id: data.id || cardId,
+      id: cardId, // use the filename/id that matches the assets
       originalFilename: data.original_filename || `${cardId}.jpg`,
-      newFilename: data.new_filename || `${filename}.jpg`,
+      newFilename: data.new_filename || `${cardId}.jpg`,
       type: data.type || 'face_card_species',
       suit: data.suit,
       rank: data.rank,
@@ -56,8 +50,10 @@ export async function loadCardReference(cardId: string): Promise<CardReference |
         jobTitle: data.text?.job_title,
         actionLine: data.text?.action_line,
       },
-      artworkPath: `/artwork/${filename}.png`,
-      fullCardPath: `/card-images/${filename}.jpg`,
+      artworkPath: `/artwork/${cardId}.png`,
+      fullCardPath: `/card-images/${cardId}.jpg`,
+      artworkPng: `/artwork/${cardId}.png`,
+      fullCardJpg: `/card-images/${cardId}.jpg`,
       jsonPath: `/card-data/${cardId}.json`,
     };
     
