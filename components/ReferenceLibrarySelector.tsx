@@ -53,9 +53,17 @@ export default function ReferenceLibrarySelector({
     return faceCards.filter(card => {
       const matchesSuit = suitFilter === 'all' || card.suit === suitFilter;
       const label = getCardDisplayName(card).toLowerCase();
-      return matchesSuit && label.includes(q);
+      const matchesQuery = label.includes(q);
+      
+      // If artwork mode is selected, only show cards that have artwork
+      if (imageSourceType === 'artwork') {
+        const hasArtwork = !!(card.artworkThumbnail || card.artworkPng || card.artworkPath);
+        return matchesSuit && matchesQuery && hasArtwork;
+      }
+      
+      return matchesSuit && matchesQuery;
     });
-  }, [faceCards, query, suitFilter]);
+  }, [faceCards, query, suitFilter, imageSourceType]);
 
   const maxTotalRefs = outputType === 'video' ? 3 : 4;
   const maxFaceCards = outputType === 'video' ? 3 : 3;
@@ -65,11 +73,13 @@ export default function ReferenceLibrarySelector({
     return totalRefs > maxTotalRefs;
   };
 
-  const getThumbnailSrc = (card: CardReference): string => {
+  const getThumbnailSrc = (card: CardReference): string | null => {
     if (imageSourceType === 'artwork') {
-      return card.artworkThumbnail || card.artworkPng || card.artworkPath || card.cardImageThumbnail || card.fullCardJpg || '';
+      // Only return artwork thumbnail if it exists, don't fall back to card images
+      return card.artworkThumbnail || card.artworkPng || card.artworkPath || null;
     }
-    return card.cardImageThumbnail || card.fullCardJpg || card.fullCardPath || '';
+    // Card images mode - always use card image thumbnails
+    return card.cardImageThumbnail || card.fullCardJpg || card.fullCardPath || null;
   };
 
   const getFullImageSrc = (card: CardReference): string => {
@@ -275,13 +285,19 @@ export default function ReferenceLibrarySelector({
                     {selectedCard ? (
                       <>
                         <div className="w-8 h-10 relative rounded overflow-hidden border border-muted-olive">
-                          <Image
-                            src={getThumbnailSrc(selectedCard) || getFullImageSrc(selectedCard)}
-                            alt={getCardDisplayName(selectedCard)}
-                            fill
-                            sizes="32px"
-                            className="object-cover"
-                          />
+                          {getThumbnailSrc(selectedCard) ? (
+                            <Image
+                              src={getThumbnailSrc(selectedCard)!}
+                              alt={getCardDisplayName(selectedCard)}
+                              fill
+                              sizes="32px"
+                              className="object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-dark-grey flex items-center justify-center text-white/30 text-[8px]">
+                              {imageSourceType === 'artwork' ? 'No artwork' : 'No image'}
+                            </div>
+                          )}
                         </div>
                         <span>{getCardDisplayName(selectedCard)}</span>
                       </>
@@ -315,7 +331,7 @@ export default function ReferenceLibrarySelector({
                                   : 'border-muted-olive hover:border-yellow-agave hover:scale-105'
                               }`}
                             >
-                              {thumbnailSrc ? (
+                                  {thumbnailSrc ? (
                                 <Image
                                   src={thumbnailSrc}
                                   alt={getCardDisplayName(card)}
@@ -324,8 +340,13 @@ export default function ReferenceLibrarySelector({
                                   className="object-cover"
                                 />
                               ) : (
-                                <div className="w-full h-full bg-dark-grey flex items-center justify-center text-white/50 text-xs">
-                                  No {imageSourceType === 'artwork' ? 'artwork' : 'image'}
+                                <div className="w-full h-full bg-dark-grey flex items-center justify-center text-white/50 text-xs p-2">
+                                  <div className="text-center">
+                                    <div>No {imageSourceType === 'artwork' ? 'artwork' : 'image'}</div>
+                                    {imageSourceType === 'artwork' && (
+                                      <div className="text-[10px] mt-1">Face cards only</div>
+                                    )}
+                                  </div>
                                 </div>
                               )}
                               {isSelected && (
